@@ -1,0 +1,23 @@
+Main:
+act(d,Drun,rofi -show drun -modes drun)
+dir(g,Gaps)
+dir(p,Power)
+
+Gaps:
+dir(i,Inner)
+dir(o,Outer)
+
+Inner:
+actReload(1,Increase,i3-msg gaps inner all plus 3)
+actReload(2,Decrease,i3-msg gaps inner all minus 3)
+actReload(3,Reset,i3-msg gaps inner all set 0)
+
+Outer:
+actReload(1,Increase,i3-msg gaps outer all plus 3)
+actReload(2,Decrease,i3-msg gaps outer all minus 3)
+actReload(3,Reset,i3-msg gaps outer all set 0)
+
+Power:
+act(z,Suspend, systemctl suspend)
+act(s,Shutdown,poweroff)
+act(r,Reboot,  reboot)

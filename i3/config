@@ -1,0 +1,21 @@
+include $HOME/.config/i3/config.d/*.conf
+
+# ENVIRONMENTS
+set $mod Mod4
+
+set $browser            "zen-browser" 
+
+set $term               "kitty"
+set $alterm             "kitty --class kitty-floating --config ~/.config/kitty/kitty-floating.conf --config ~/.config/kitty/theme-floating.conf"
+set $fileManager        "kitty --class files --config ~/.config/kitty/kitty-floating.conf --config ~/.config/kitty/theme-floating.conf -e ranger"
+
+#set $dmenu              "rofi -show drun"
+set $dmenu              "~/.config/rofi/blezz/blezz.sh"
+set $notes              "~/.config/rofi/notes/notes.sh"
+set $bluetoothManager   "kitty --class kitty-floating --config ~/.config/kitty/kitty-floating.conf --config ~/.config/kitty/theme-floating.conf -e bluetoothctl"
+set $statusbar          "~/.config/i3/scripts/polybar-switch.sh"
+
+set $screenshot         "~/.config/i3/scripts/screenshot.sh"
+set $picomswitch        "~/.config/i3/scripts/picom-switch.sh"
+set $fullscreenshot     "~/.config/i3/scripts/full-screenshot.sh"
+set $displaysetings     "~/.config/i3/scripts/display-setings.sh"
