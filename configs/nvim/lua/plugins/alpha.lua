@@ -22,8 +22,8 @@ return {
 			dashboard.button("i", "   * New file", "<cmd> ene <CR>"),
 			dashboard.button("ff", "   * Find file", "<cmd> Telescope find_files <CR>"),
 			dashboard.button("fs", "   * Live grep", "<cmd> Telescope live_grep <CR>"),
-			--dashboard.button("l", "   * Lazy", "<cmd> Lazy <cr>"),
-			--dashboard.button("m", "   * Mason", "<cmd> Mason <cr>"),
+			-- dashboard.button("l", "   * Lazy", "<cmd> Lazy <cr>"),
+			-- dashboard.button("m", "   * Mason", "<cmd> Mason <cr>"),
 			dashboard.button("q", "   * Quit", "<cmd> qa <CR>"),
 		}
 

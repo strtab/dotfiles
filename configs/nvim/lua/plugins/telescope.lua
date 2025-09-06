@@ -13,7 +13,7 @@ return {
 				layout_config = {
 					horizontal = {
 						prompt_position = "bottom",
-						preview_width = 0.65,
+						preview_width = 0.64,
 					},
 					vertical = {
 						mirror = false,
@@ -35,5 +35,6 @@ return {
 		keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find string" })
 		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
 		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
+		keymap.set("n", "<leader>nh", "<cmd>:Telescope notify<CR>", { desc = "Notify history" })
 	end,
 }

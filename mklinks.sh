@@ -1,13 +1,14 @@
 #!/usr/bin/env sh
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CONFIG_DIR="$HOME/.config"
 
-for config in $CURRENT_DIR/*; do
-    name=$(basename "$config")
-    [ "$name" = "mklinks.sh" ] && continue
-    [ "$name" = "synk.sh" ] && continue
-    [ "$name" = "oh-my-zsh" ] && continue
-    [ "$name" = "README.md" ] && continue
-    [ "$name" = ".git" ] && continue
-    ln -s "$config" ~/.config/
+for d in $CURRENT_DIR/configs/*; do
+    name=$(basename "$d")
+    target="$CONFIG_DIR/$name"
+
+    # skip if target already exists and it is NOT a symlink
+    [ -e "$target" ] && [ ! -L "$target" ] && continue
+
+    ln -sfn "$d" $CONFIG_DIR
 done

@@ -3,7 +3,6 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
-		-- "rcarriga/nvim-notify", included on nvim-notify.lua
 	},
 	config = function()
 		require("noice").setup({
@@ -24,14 +23,30 @@ return {
 			},
 			cmdline = {
 				enabled = true,
-				view = "cmdline",
+				view = "mini", -- split, vsplit, mini, cmdline, cmdline_popup, confirm, hover
 				format = {
 					cmdline = { icon = " :" },
-					search_down = { icon = "  " },
-					search_up = { icon = "  " },
+					search_down = { icon = " /" },
+					search_up = { icon = " /" },
 					filter = { icon = " $" },
 					lua = { icon = " lua" },
 					help = { icon = " ?" },
+				},
+			},
+			messages = {
+				enabled = true,
+			},
+			commands = {
+				history = {
+					view = "popup",
+				},
+				all = {
+					view = "popup",
+				},
+			},
+			lsp = {
+				documentation = {
+					view = "hover",
 				},
 			},
 		})

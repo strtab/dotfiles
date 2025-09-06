@@ -1,8 +1,8 @@
 return {
 	"voldikss/vim-floaterm",
 	init = function()
-		vim.g.floaterm_width = 0.6
-		vim.g.floaterm_height = 0.6
+		vim.g.floaterm_width = 0.7
+		vim.g.floaterm_height = 0.7
 		vim.g.floaterm_position = "center"
 	end,
 	config = function()

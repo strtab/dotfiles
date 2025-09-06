@@ -7,12 +7,13 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-		local keymap = vim.keymap -- for conciseness
-		vim.api.nvim_create_autocmd("LspAttach", {
-			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+		local keymap = vim.keymap
+		local api = vim.api
+
+		api.nvim_create_autocmd("LspAttach", {
+			group = api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
 				-- Buffer local mappings.
 				-- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -20,16 +21,16 @@ return {
 
 				-- set keybinds
 				opts.desc = "Show buffer diagnostics"
-				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 
 				opts.desc = "Show line diagnostics"
-				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
 				opts.desc = "Show documentation for what is under cursor"
-				keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+				keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
 				-- opts.desc = "Restart LSP"
-				--keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+				-- keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 			end,
 		})
 
@@ -40,7 +41,7 @@ return {
 			underline = true,
 			update_in_insert = false,
 			virtual_text = false,
-			severity_sort = false,
+			severity_sort = true,
 			signs = {
 				text = {
 					[vim.diagnostic.severity.ERROR] = "",

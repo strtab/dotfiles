@@ -1,4 +1,4 @@
-enable_audio_bell no
+#enable_audio_bell no
 window_padding_width 40
 
 # $ kitten choose-fonts
@@ -26,6 +26,6 @@ confirm_os_window_close 0
 
 
 # BEGIN_KITTY_THEME
-# Apprentice
+# Rosé Pine
 include current-theme.conf
 # END_KITTY_THEME
