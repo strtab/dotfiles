@@ -20,17 +20,11 @@ return {
 				local opts = { buffer = ev.buf, silent = true }
 
 				-- set keybinds
-				opts.desc = "Show buffer diagnostics"
-				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-
-				opts.desc = "Show line diagnostics"
+				opts.desc = "Diagnostic picker"
 				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
 				opts.desc = "Show documentation for what is under cursor"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-				-- opts.desc = "Restart LSP"
-				-- keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 			end,
 		})
 

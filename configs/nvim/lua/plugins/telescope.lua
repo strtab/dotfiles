@@ -34,7 +34,9 @@ return {
 		keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 		keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find string" })
 		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
-		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
-		keymap.set("n", "<leader>nh", "<cmd>:Telescope notify<CR>", { desc = "Notify history" })
+		keymap.set("n", "<leader>fD", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Find diagnostics" })
+		keymap.set("n", "<leader>fh", "<cmd>:Telescope notify<CR>", { desc = "Find notify" })
+		keymap.set("n", "<leader>fc", "<cmd>:Telescope git_commits<CR>", { desc = "Find commits" })
+		keymap.set("n", "<leader>fk", "<cmd>:Telescope keymaps<CR>", { desc = "Find keymaps" })
 	end,
 }
