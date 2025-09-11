@@ -6,37 +6,32 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
-				selection_caret = "  ",
-				entry_prefix = "  ",
+				selection_caret = "",
+				entry_prefix = "",
 				initial_mode = "insert",
 				layout_strategy = "horizontal",
 				layout_config = {
 					horizontal = {
 						prompt_position = "bottom",
-						preview_width = 0.64,
+						preview_width = 0.6,
 					},
-					vertical = {
-						mirror = false,
-					},
-					width = 0.7,
+					width = 0.8,
 					height = 0.75,
 					preview_cutoff = 120,
 				},
 				winblend = 0,
-				border = { title = "Results" },
 				borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-				color_devicons = true,
 			},
 		})
 		-- set keymaps
 		local builtin = require("telescope.builtin")
 		local keymap = require("vim.keymap")
-		keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-		keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find string" })
-		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
-		keymap.set("n", "<leader>fD", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Find diagnostics" })
-		keymap.set("n", "<leader>fh", "<cmd>:Telescope notify<CR>", { desc = "Find notify" })
-		keymap.set("n", "<leader>fc", "<cmd>:Telescope git_commits<CR>", { desc = "Find commits" })
-		keymap.set("n", "<leader>fk", "<cmd>:Telescope keymaps<CR>", { desc = "Find keymaps" })
+		keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
+		keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "String" })
+		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Diagnostics" })
+		keymap.set("n", "<leader>fn", "<cmd>:Telescope notify<CR>", { desc = "Notify" })
+		keymap.set("n", "<leader>fc", "<cmd>:Telescope git_commits<CR>", { desc = "Commits" })
+		keymap.set("n", "<leader>fk", "<cmd>:Telescope keymaps<CR>", { desc = "Keymaps" })
 	end,
 }

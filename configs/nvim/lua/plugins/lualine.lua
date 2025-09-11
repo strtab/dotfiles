@@ -71,40 +71,20 @@ return {
 			},
 			sections = {
 				lualine_a = { custom_mode },
-				lualine_b = { "filename" },
-				lualine_c = { "selectioncount", "diff" },
+				lualine_b = { "selectioncount" },
+				lualine_c = { "diff" },
 				lualine_x = {},
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
 			inactive_sections = {
 				lualine_a = {},
-				lualine_b = { "filename" },
+				lualine_b = {},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},
 				lualine_z = {},
 			},
-			--[[                     Available components
-    branch (git branch)
-    buffers (shows currently available buffers)
-    diagnostics (diagnostics count from your preferred source)
-    diff (git diff status)
-    encoding (file encoding)
-    fileformat (file format)
-    filename
-    filesize
-    filetype
-    hostname
-    location (location in file in line:column format)
-    mode (vim mode)
-    progress (%progress in file)
-    searchcount (number of search matches when hlsearch is active)
-    selectioncount (number of selected characters or lines)
-    tabs (shows currently available tabs)
-    windows (shows currently available windows)
-    lsp_status (shows active lsps in the current buffer and a progress spinner) ]]
-			--
 		})
 	end,
 }

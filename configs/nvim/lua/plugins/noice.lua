@@ -52,6 +52,6 @@ return {
 		})
 		-- set keymaps
 		local keymap = require("vim.keymap")
-		keymap.set("n", "<leader>n", "<cmd>Noice dismiss<CR>", { desc = "Dismiss messages" })
+		keymap.set("n", "<leader>N", "<cmd>Noice dismiss<CR>", { desc = "Dismiss messages" })
 	end,
 }
