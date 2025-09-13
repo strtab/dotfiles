@@ -22,8 +22,9 @@ return {
 			timeout = 100,
 			top_down = true,
 			on_open = function(win)
-				if vim.api.nvim_win_is_valid(win) then
-					vim.api.nvim_win_set_config(win, {
+				local api = vim.api
+				if api.nvim_win_is_valid(win) then
+					api.nvim_win_set_config(win, {
 						border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
 					})
 				end

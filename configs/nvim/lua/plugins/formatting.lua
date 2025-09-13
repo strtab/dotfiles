@@ -9,13 +9,11 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
-				yaml = { "prettier" },
 				markdown = { "prettier" },
 				angular = { "prettier" },
 				javascript = { "prettier" },
 				less = { "prettier" },
 				typescript = { "prettier" },
-
 				lua = { "stylua" },
 			},
 			format_on_save = {

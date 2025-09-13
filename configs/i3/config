@@ -11,7 +11,7 @@ set $fileManager        "kitty --class files --config ~/.config/kitty/kitty-floa
 
 #set $dmenu              "rofi -show drun"
 set $dmenu              "~/.config/rofi/blezz/blezz.sh"
-set $notes              "~/.config/rofi/notes/notes.sh"
+set $notes              "obsidian"
 set $bluetoothManager   "kitty --class kitty-floating --config ~/.config/kitty/kitty-floating.conf --config ~/.config/kitty/theme-floating.conf -e bluetoothctl"
 set $statusbar          "~/.config/i3/scripts/polybar-switch.sh"
 

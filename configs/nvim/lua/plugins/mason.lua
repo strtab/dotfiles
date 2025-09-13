@@ -29,7 +29,9 @@ return {
 				"angularls",
 				"ansiblels",
 				"dockerls",
+				"helm_ls",
 				"lua_ls",
+				"yamlls",
 				"bashls",
 				"gopls",
 			},
@@ -37,9 +39,8 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"actionlint", -- lua
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
+				"prettier",
+				"stylua",
 			},
 		})
 	end,

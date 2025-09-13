@@ -12,11 +12,12 @@ fi
 alias cat='bat'
 alias ports='ss -tulpan | bat -l log'
 alias cpuinfo='bat -l cpuinfo /proc/cpuinfo'
-alias df='df -h 2>&1 | bat -l lua'
+alias df='df -hx tmpfs -x efivarfs -x swap 2>&1 | bat -l lua'
 alias free='free -h 2>&1 | bat -l cpuinfo'
 alias head='head 2>&1 | bat -l log'
 alias tail='tail 2>&1 | bat -l log --paging=never'
 alias lsblk='lsblk -i -o NAME,FSTYPE,SIZE,FSUSE%,MOUNTPOINTS,UUID 2>&1 | bat -l conf'
+alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
