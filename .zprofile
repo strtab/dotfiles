@@ -13,7 +13,7 @@ if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -le 1 ]; then
   echo "     ▄████████▀     ▄████▀     ███    █▀    ███    ███    ▄████▀   ████       ███▄";
   echo "                                            ▀▀▀    █▀                            ";
 
-  exec startx 
+  exec startx
 else
   setfont -d
 fi
