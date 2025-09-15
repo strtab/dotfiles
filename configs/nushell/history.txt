@@ -1,0 +1,370 @@
+ls
+ps | when name = picom
+ps | where name = picom
+ps | where name == picom
+ls
+vi
+ls
+ll
+yay -S wikiman
+wikiman 
+help
+ls
+wikiman
+vi .dotfiles/configs/kitty/current-theme.conf
+nvim .dotfiles/configs/kitty/current-theme.conf
+ps
+pstree
+wikiman
+plugin add 
+configdoc
+confdoc
+$env.conf.show_banner
+confdoc
+ls
+vi
+sudo pacman -S vi
+vi
+vi .zshrc
+ls Pictures/165.png
+ls
+ls /
+++=
+ls
+cd
+confdoc
+ls
+ran
+ranger
+nvim config.nu
+ls
+cd .dotfiles/
+ls
+nvim env.nu
+vi
+sldjf
+nvim configs/nushell/env.nu
+reset
+alkdfjk
+lsdjfk
+ls
+vi
+sudo pacman -Rs vi
+nvim
+ls
+z
+zoxide init nushell | save -f ~/.zoxide.nu
+ls
+ls -a
+mv .zoxide.nu .dotfiles/configs/nushell/plugins
+cd .dotfiles/configs/nushell/
+ls
+mv plugins zoxide.nu
+mkdir plugins
+mv zoxide.nu plugins/
+nvim config.nu
+cd .dotfiles/configs/nushell/
+cd plugins/
+ls
+eza
+chmod +x zoxide.nu
+nu
+pwd
+vi ../config.nu
+nvim ../config.nu
+nu
+vi ../config.nu
+nvim ../config.nu
+vi ../config.nu
+nu
+ls
+keybindings list 
+kadmin 
+vi ../config.nu
+nvim ../config.nu
+zoxide init nushell | save -f ~/.zoxide.nu
+z
+z plu
+nu
+ls
+eza
+eza | bat
+z dot
+cd .dotfiles/configs/nushell
+ls
+nvim env.nu
+fzf
+man --help
+man -h
+alias 
+alias vi = nvim
+vi
+du -h 
+du
+du help-bat
+cat
+help du
+ran
+tmux
+ip
+ip a
+gh
+cat
+cat .zshenv
+bat .zshenv
+z conf
+cd .config/
+vi bat/config
+bat .zshenv
+cd
+bat .zshenv
+ls
+vi bat/config
+z co
+vi bat/config
+cd bat
+bat config
+vi bat/config
+vi config
+bat help
+help bat
+bat -h
+vi config
+bat config
+bat -h
+vi config
+bat -h
+vi config
+bat config
+bat -h
+open config
+bat -h
+export BAT_STYLE="numbers,changes"
+$env.BAT_STYLE="numbers,changes"
+$env.BAT_STYLE = "numbers,changes"
+bat config
+ls
+l
+la /
+vi config
+bat -h
+$env.BAT_STYLE = "numbers,changes,grid"
+bat config
+bat -h
+$env.BAT_STYLE = "numbers,changes,grid,plain"
+bat config
+ls
+ls | bat
+ls / | bat
+ls / | bat -l log
+ls / | bat -l 
+ls / | bat -l --help
+ls / | bat --help
+ls / | bat -L
+zi
+ls
+z nu
+vi config.nu
+ls
+l
+la
+ll
+z nu
+vi config.nu
+z nu
+vi config.nu
+ls
+l
+ls
+la
+ll
+l
+cd
+l
+ls
+z nu
+l
+help ls
+help ls | less
+l
+help ls | less
+ls -t 
+l -t
+l --threads 
+l -l 
+l --du 
+l
+set 
+confdoc
+lsblk
+unalias lsblk
+alias --help
+unalias
+apropos unalias
+apropos ualias
+lsblk
+lsblk | columns 
+lsblk | column
+help commands
+help
+help | nu-highlight 
+ls
+cat config.nu 
+cat config.nu | nu-highlight 
+cpuinfo
+ports
+ss
+ss -tulp
+ss -tulpan
+ss -tulpa
+ss -tulp
+ss -tula
+ss -tulan
+ss -tula
+ss -tulan
+ss -tulan | bat
+ss -tulan | bat -l log
+fzf
+zf
+zi
+ls
+l
+fzf | help-bat
+help-bat fzf
+help fzf
+ls
+l
+fzf -h
+fzf history
+fzf history.txt
+lsblk
+lsblk | enumerate 
+lsblk | blocks 
+start config.nu
+lsblk | to tables
+lsblk | table 
+lsblk | table env.nu
+lsblk | table 
+tail config.nu
+head config.nu
+head config.nu | nu-highlight 
+head config.nu | bat -l log
+free
+free | table
+free
+free | table
+free | lines | table
+free | lines | nu-highlight  | table 
+free | lines | table | nu-highlight 
+sys mem
+lsblk | lines | table | nu-highlight 
+lsblk | lines | table
+lsblk | lines | table | bat -l cpuinfo
+free
+head config.nu
+free
+free -h
+free
+ports
+ss -h
+help ss
+help-bat ss
+ports
+ls
+sys cpu 
+sys host 
+sys users 
+sys disks 
+lsblk
+ls -j
+ls -h
+help ls
+help
+help ls
+h ls
+help ls
+tmux
+ls
+l
+ll
+la
+tree
+ll
+l
+l ~
+eza ~ -la
+ll
+confdoc
+h ls
+confdoc
+h ls
+ls
+l
+open config.nu
+http get homelab.com
+http get homelab
+http get homelab:8004
+http get homelab:8001
+http get homelab:8006
+http get https://homelab:8006
+http get https://homelab:8006/
+http get https://habr.com/ru/articles/826260/
+http get https://httpbin.org/get
+cd 
+cd Dev/Go/
+ls
+cd get-request/
+vi main.go
+$env.GOPATH
+ls ~
+vi main.go
+z nu
+$env.HOME
+$env.GOPATH
+vi config.nu
+vi env.nu
+$env.GOPATH
+z go
+cd dns/
+ls
+cd dnsfetch/
+vi main.go
+go run main.go
+cd .../get-request
+go run main.go
+vi main.go
+brew install carapace
+brew 
+brew list
+mkdir ~/.cache/carapace<\n>carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+man BitmapPad 
+feh --bg-scale Pictures/Wallpapers/wave_1889.jpg
+feh --bg-scale Pictures/Wallpapers/gruvbox_grid.png
+ls
+l
+l | sort 
+help sort
+help sort | less
+ls
+l
+zsh
+l
+burnSnake 
+zi
+ls
+startx
+ls
+help sort
+h sort
+feh --bg-scale Pictures/Wallpapers/house.png
+feh --bg-scale Pictures/Wallpapers/vim.png
+feh --bg-scale Pictures/Wallpapers/starry-sky.png
+z Downloads/
+ls
+mv wp14408214-rose-pine-wallpapers.png ~/Pictures/Wallpapers/rose-pine.png
+cd
+feh --bg-scale Pictures/Wallpapers/rose-pine.png
+ls
+l
+l -f 
+zi

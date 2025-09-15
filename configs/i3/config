@@ -10,7 +10,7 @@ set $term               "kitty"
 set $alterm             "kitty --class kitty-floating --config ~/.config/kitty/kitty-floating.conf --config ~/.config/kitty/theme-floating.conf"
 
 set $fileManager        "kitty --class files --config ~/.config/kitty/kitty-floating.conf --config ~/.config/kitty/theme-floating.conf -e ranger"
-set $bluetoothManager   "kitty --class kitty-floating --config ~/.config/kitty/kitty-floating.conf --config ~/.config/kitty/theme-floating.conf -e bluetuith"
+set $bluetoothManager   "kitty --class kitty-floating --config ~/.config/kitty/kitty-floating.conf --config ~/.config/kitty/theme-floating.conf -e bluetui"
 
 #set $dmenu              "rofi -show drun"
 set $dmenu              "~/.config/rofi/blezz/blezz.sh"

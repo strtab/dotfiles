@@ -1,4 +1,5 @@
-plugins=(git fasd colored-man-pages)
+plugins=(git colored-man-pages)
+eval "$(zoxide init zsh)"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/aliases.zsh
@@ -14,7 +15,7 @@ B=$fg_no_bold[blue]
 M=$fg_no_bold[magenta]
 RESET=$reset_color
 
-local return_side="%(?..%{$R%}%?   %{$RESET%})"
+local return_side="%(?..%{$R%}   %{$RESET%})"
 
 # Prompt
 PROMPT='%{$M%}%B%1~%b%{$RESET%} %{$M%}%{$RESET%}'
