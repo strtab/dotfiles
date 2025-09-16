@@ -12,3 +12,13 @@ for d in $CURRENT_DIR/configs/*; do
 
     ln -sfn "$d" $CONFIG_DIR
 done
+
+for file in $CURRENT_DIR/home/*; do
+    name=$(basename "$file")
+    target="$HOME/$name"
+
+    # skip if target already exists and it is NOT a symlink
+    [ -e "$target" ] && [ ! -L "$target" ] && continue
+
+    ln -sfn "$file" "$HOME/.$name"
+done

@@ -16,7 +16,7 @@ return {
 	config = function()
 		vim.g.moonflyWinSeparator = 2
 		require("rose-pine").setup({
-			variant = "dawn", -- auto, main, moon, or dawn
+			variant = "moon", -- auto, main, moon, or dawn
 			dim_inactive_windows = false,
 			extend_background_behind_borders = false,
 			enable = {

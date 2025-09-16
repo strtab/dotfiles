@@ -3,10 +3,10 @@
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $CURRENT_DIR
 
-for file in .zshrc .zshenv .zprofile .xinitrc
-do
-  [ -f "$HOME/$file" ] && cp "$HOME/$file" "$CURRENT_DIR"
-done
+# for file in .zshrc .zshenv .zprofile .xinitrc
+# do
+#   [ -f "$HOME/$file" ] && cp "$HOME/$file" "$CURRENT_DIR"
+# done
 
 git add .
 git commit -qm "backup $(date '+%Y-%m-%d')"

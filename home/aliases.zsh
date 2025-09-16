@@ -1,21 +1,17 @@
-alias ran='ranger'
 alias ip='ip -c=auto'
 alias du='du -hs'
 alias gh='history|grep'
-alias tmux='tmux -f ~/.dotfiles/tmux/tmux.conf'
 
-if [ $TERM = 'xterm-kitty' ]; then
-  alias ssh='kitten ssh' 
-fi
+# if [ $TERM = 'xterm-kitty' ]; then
+#   alias ssh='kitten ssh' 
+# fi
 
 # bat hightlights
-alias cat='bat'
-alias ports='ss -tulpan | bat -l log'
+alias cat='bat --no-pager'
+alias ports='ss -tulan | bat -l log'
 alias cpuinfo='bat -l cpuinfo /proc/cpuinfo'
 alias df='df -hx tmpfs -x efivarfs -x swap 2>&1 | bat -l lua'
 alias free='free -h 2>&1 | bat -l cpuinfo'
-alias head='head 2>&1 | bat -l log'
-alias tail='tail 2>&1 | bat -l log --paging=never'
 alias lsblk='lsblk -i -o NAME,FSTYPE,SIZE,FSUSE%,MOUNTPOINTS,UUID 2>&1 | bat -l conf'
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'

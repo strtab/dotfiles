@@ -368,3 +368,139 @@ ls
 l
 l -f 
 zi
+ls
+l
+z nu
+ls
+vi config.nu 
+top
+ls
+l
+burnSnake 
+tmux
+tty
+tmux -V
+groups
+tmux -f /dev/null
+tmux -vv
+ls
+l
+ls -all
+l
+c
+ls
+ports
+vi config.nu 
+ls
+rm *.log
+ls
+l
+la
+ll
+ls
+ll
+ll | hide target
+ll | hide 
+ll | hide hide
+h hide 
+help hide 
+ll | hide ll
+ll ; hide ll
+ll ; hide 
+ll ; hide target
+ll
+la
+ll
+ls
+ll
+ll ; hide target
+ll
+ll | columns
+ll | reject mode
+ll | reject mode target
+ll | reject mode target created
+ll | reject mode target created accessed modified
+ll / | reject mode target created accessed modified
+ll / | reject mode target created accessed modified inode
+ll .config | reject mode target created accessed modified inode 
+ll | reject mode target created accessed modified inode 
+ll | reject mode target created accessed modified inode num_links
+z nu
+ll
+la
+vi aliases.nu 
+l
+la
+l
+ps
+ls
+cat
+df
+z nu
+df
+ls
+ports
+df
+df | table
+df
+ls
+ll -h 
+ls -h
+tree -h
+tree
+vi aliases.nu 
+svi /etc/hosts 
+vi aliases.nu 
+ssh turnkey
+ssh-keyscan turnkey
+ssh-copy-id  turnkey
+ssh turnkey
+ssh homelab
+svi /etc/hosts 
+ssh pve
+ssh turnkey
+sftp turnkey
+ssh turnkey
+ranger scp://turnkey
+ranger scp://turnkey/
+ranger scp://turnkey/~
+ssh homelab
+svi /etc/hosts 
+ls
+ssh homelab
+l
+ls
+l
+ll
+l
+ll
+la
+ls
+l
+ll
+l
+sp
+free
+sys disks
+df
+du
+ll .
+ports
+ls
+ll
+ps
+ls
+ll
+l
+l /
+l
+l /
+l ~
+l $env.HOME
+ll
+l
+ls
+ll
+ls
+ls NAS
+ls
