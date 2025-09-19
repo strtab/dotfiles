@@ -1,0 +1,4 @@
+--ignore=.stowrc
+--ignore=notused
+--ignore=.gitignore
+--ignore=README.md
