@@ -6,7 +6,6 @@ if ($env.TERM? == "xterm-kitty") {
 # Basic aliases
 alias ran = ranger
 alias ip = ip -c=auto
-alias tmux = tmux -f ~/.dotfiles/tmux/tmux.conf
 
 def confdoc [] { 
   config nu --doc | nu-highlight | bat -l conf 
@@ -16,12 +15,11 @@ def confdoc [] {
 alias cpuinfo = bat -l cpuinfo /proc/cpuinfo
 
 def ports [...args] {
-  ^ss -tulan ...$args | lines | table | bat -l log 
+  ^ss -tulan ...$args | lines | bat -l log
 } 
 
-# df with error handling
 def df [...args] {
-    ^df -hx tmpfs -x efivarfs -x swap ...$args | bat -l lua --style grid
+    ^df -hx tmpfs -x efivarfs -x swap ...$args | lines | bat -l lua
 }
 
 # fzf with bat preview
@@ -35,8 +33,12 @@ def h [cmd: string, ...args] {
 }
 
 # neovim
-alias vi = nvim
-alias svi = sudo nvim
+def vi [...args] {
+  nvim ...$args
+} 
+def svi [...args] {
+  sudo nvim ...$args
+} 
 
 # eza
 alias tree = eza --tree -L 2
@@ -45,12 +47,12 @@ alias tree = eza --tree -L 2
 # alias ll = eza -l --no-time
 
 # ls
-def l [...args] {
-  ls -la -s ...$args | reject mode target created accessed modified inode num_links
+def l [path: path = .] {
+  ls -la -s $path | reject mode target created accessed modified inode num_links
 } 
-def la [...args] {
-  ls -la -s ...$args | reject mode target created accessed modified inode num_links
+def la [path: path = .] {
+  ls -la -s $path | reject mode target created accessed modified inode num_links
 } 
-def ll [...args] {
-  ls -l -s | reject mode target created accessed modified inode num_links
+def ll [path: path = .] {
+  ls -l -s $path | reject mode target created accessed modified inode num_links
 } 

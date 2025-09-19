@@ -1,0 +1,43 @@
+plugins=(
+  colored-man-pages
+  gitfast
+  golang
+  fzf # <C-r> search 
+  tmux
+  git 
+)
+
+# set -o vi
+
+eval "$(zoxide init zsh)"
+
+source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases.zsh
+
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+[ ! -d ~/.cache/zsh ] && mkdir -p ~/.cache/zsh
+[ ! -f ~/.cache/zsh/history ] && touch ~/.cache/zsh/history
+HISTFILE=~/.cache/zsh/history
+HIST_STAMPS="dd/mm/yyyy"
+
+# Color shortcuts
+R=$fg_no_bold[red]
+B=$fg_no_bold[blue]
+M=$fg_no_bold[magenta]
+RESET=$reset_color
+
+local return_side="%(?..%{$R%}   %{$RESET%})"
+
+# Prompt
+PROMPT='%{$M%}%B%1~%b%{$RESET%} %{$M%}%{$RESET%}'
+RPS1="${return_side}"
+
+function tmux-start() {
+  if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+    tmux attach-session -t main 2>/dev/null || \
+      tmux new-session -s main
+  fi
+}
+
+[[ $TERM != "xterm-256color" ]] && tmux-start

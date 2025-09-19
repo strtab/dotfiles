@@ -1,6 +1,7 @@
 alias ip='ip -c=auto'
 alias du='du -hs'
-alias gh='history|grep'
+alias help='bash -c --no-profile help'
+alias open='setsid ./.config/i3/scripts/open.sh . 2>/dev/null'
 
 # if [ $TERM = 'xterm-kitty' ]; then
 #   alias ssh='kitten ssh' 
@@ -23,7 +24,7 @@ alias svi='sudo nvim'
 
 # eza
 alias tree='eza --tree -L 2'
-alias ls='eza'
+alias ls='eza' 
 alias l='eza -la --no-time'
 alias la='eza -la --no-time'
 alias ll='eza -l --no-time'
