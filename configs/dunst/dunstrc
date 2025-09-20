@@ -1,5 +1,5 @@
 [global]
-	font = "IBM Plex Mono 12"
+	font = "IBM Plex Mono 11"
 
 	# Allow a small subset of html markup:
 	# <b>bold</b>
@@ -19,7 +19,7 @@
 	#   %I  iconname (without its path)
 	#   %p  progress value if set ([  0%] to [100%]) or nothing
 	# Markup is allowed
-	format = "<b>%s</b>\n%b"
+	format = "<b>%s</b>: %b"
 
 	# Sort messages by urgency
 	sort = yes
@@ -56,16 +56,16 @@
 	# dynamic width from 0 to 300
 	# width = (0, 300)
 	# constant width of 300
-	width = 300
+	width = (50, 400)
 
 	# The maximum height of a single notification, excluding the frame.
 	height = (50, 300)
 
 	# Position of the notification
-	origin = top-right
+	origin = top-left
 
 	# Offset from the origin
-	offset = 30x65
+	offset = 30x40
 
     # Turn on the progess bar. It appears when a progress hint is passed with
     # for example dunstify -h int:value:12
@@ -86,7 +86,7 @@
 
 	# Frame
 	frame_width = 0
-	frame_color = "#1C2325"
+	frame_color = "#c6c6c6"
 
 	# The transparency of the window. range: [0; 100]
 	# This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -104,7 +104,7 @@
 
 	# Should a notification popped up from history be sticky or
 	# timeout as if it would normally do.
-	sticky_history = yes
+	sticky_history = no
 
 	# The height of a single line. If the height is smaller than the font height,
 	# it will get raised to the font height.
@@ -119,7 +119,7 @@
 	padding = 10
 
 	# Horizontal padding
-	horizontal_padding = 12
+	horizontal_padding = 15
 
 	# Padding between text and icon.
 	text_icon_padding = 16
@@ -130,12 +130,12 @@
 	#  * foreground: use the same color as the foreground
 	#  * frame: use the same color as the frame.
 	#  * anything else will be interpreted as a X color
-	separator_color = frame
+	separator_color = auto
 
 	# Print a notification on startup
 	# This is mainly for error detection, since dbus (re-)starts dunst
 	# automatically after a crash.
-	startup_notification = false
+	startup_notification = true
 
 	# Align icons left/right/off
 	icon_position = left
@@ -163,34 +163,28 @@
 	mouse_middle_click = do_action, close_current
 	mouse_right_click = close_all
 
-# [openEwwPopup]
-# 	script = ~/.config/dunst/scripts/openEwwPopup.sh
-
-[songArtLogger]
-	script = ~/.config/dunst/scripts/songArtLogger.sh
-
 [urgency_low]
 	timeout = 6
-	background = "#101010"
+	background = "#604533"
 	foreground = "#9fa0a0"
 	frame_color = "#192022"
 	highlight = "#7ba5dd"
 
 [urgency_normal]
-	# script = ~/.config/dunst/scripts/playNotificationSound.sh
+	script = ~/.config/dunst/scripts/play-sound.sh
 	timeout = 6
-	background = "#101010"
-	foreground = "#c5c8c9"
+	background = "#604533"
+	foreground = "#9fa0a0"
 	frame_color = "#192022"
 	highlight = "#7ba5dd"
 
 [urgency_critical]
-	script = ~/.config/dunst/scripts/playNotificationSound.sh
+	script = ~/.config/dunst/scripts/play-sound.sh
 	timeout = 6
-	background = "#0b0f10"
-	foreground = "#c5c8c9"
+	background = "#604533"
+	foreground = "#9fa0a0"
 	frame_color = "#192022"
-	highlight = "#ee6a70"
+	highlight = "#7ba5dd"
 
 [backlight]
 	summary = "Backlight"
