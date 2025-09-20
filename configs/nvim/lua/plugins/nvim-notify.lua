@@ -2,7 +2,7 @@ return {
 	"rcarriga/nvim-notify",
 	config = function()
 		require("notify").setup({
-			background_colour = "#000000",
+			background_colour = "#101010",
 			fps = 30,
 			icons = {
 				DEBUG = " Debug",
@@ -21,14 +21,14 @@ return {
 			},
 			timeout = 100,
 			top_down = true,
-			on_open = function(win)
-				local api = vim.api
-				if api.nvim_win_is_valid(win) then
-					api.nvim_win_set_config(win, {
-						border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-					})
-				end
-			end,
+			-- on_open = function(win)
+			-- 	local api = vim.api
+			-- 	if api.nvim_win_is_valid(win) then
+			-- 		api.nvim_win_set_config(win, {
+			-- 			border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+			-- 		})
+			-- 	end
+			-- end,
 		})
 	end,
 }

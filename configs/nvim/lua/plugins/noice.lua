@@ -23,15 +23,19 @@ return {
 			},
 			cmdline = {
 				enabled = true,
-				view = "mini", -- split, vsplit, mini, cmdline, cmdline_popup, confirm, hover
+				view = "cmdline_popup", -- split, vsplit, mini, cmdline, cmdline_popup, confirm, hover
 				format = {
-					cmdline = { icon = " :" },
+					cmdline = { icon = ":", title = "" },
 					search_down = { icon = " /" },
-					search_up = { icon = " /" },
-					filter = { icon = " $" },
-					lua = { icon = " lua" },
-					help = { icon = " ?" },
+					search_up = { icon = " ?" },
+					filter = { icon = "$" },
+					lua = { icon = "lua", title = "" },
+					help = { icon = "help", title = "" },
 				},
+			},
+			popupmenu = {
+				enabled = true,
+				kind_icons = false,
 			},
 			messages = {
 				enabled = true,
@@ -51,12 +55,11 @@ return {
 			},
 			lsp = {
 				documentation = {
-					view = "hover",
+					view = "hover", -- documentation from lspconfig (key "K" in normal mode)
 				},
 			},
 		})
 		-- set keymaps
-		local keymap = require("vim.keymap")
-		keymap.set("n", "<leader>N", "<cmd>Noice dismiss<CR>", { desc = "Dismiss messages" })
+		vim.keymap.set("n", "<leader>N", "<cmd>Noice dismiss<CR>", { desc = "Dismiss messages" })
 	end,
 }

@@ -11,7 +11,7 @@ return {
 				-- height = { min = 4, max = 80 },
 				-- col = 2,
 				-- row = math.huge,
-				border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+				--border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
 				padding = { 1, 1 },
 				title = false,
 				zindex = 100,

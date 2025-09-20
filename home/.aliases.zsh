@@ -2,6 +2,8 @@ alias ip='ip -c=auto'
 alias du='du -hs'
 alias help='bash -c --no-profile help'
 alias open='setsid ./.config/i3/scripts/open.sh . 2>/dev/null'
+# <M-c> keybind, omg
+# alias fzd='cd $(fd --hidden -t d . | fzf --scheme=path --no-preview --height=40%)'
 
 # if [ $TERM = 'xterm-kitty' ]; then
 #   alias ssh='kitten ssh' 

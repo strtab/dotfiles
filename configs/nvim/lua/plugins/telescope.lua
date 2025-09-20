@@ -6,8 +6,8 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
-				selection_caret = "",
-				entry_prefix = "",
+				selection_caret = " ",
+				entry_prefix = " ",
 				initial_mode = "insert",
 				layout_strategy = "horizontal",
 				layout_config = {
@@ -20,7 +20,7 @@ return {
 					preview_cutoff = 120,
 				},
 				winblend = 0,
-				borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+				--borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 			},
 		})
 		-- set keymaps

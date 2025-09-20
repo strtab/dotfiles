@@ -18,7 +18,7 @@ return {
 				start_mode = "insert",
 
 				-- border = { "", "", "", "", "", "", "", "" },
-				border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+				--border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
 
 				-- 'editor' and 'win' will default to being centered
 				relative = "cursor",

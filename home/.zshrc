@@ -2,14 +2,13 @@ plugins=(
   colored-man-pages
   gitfast
   golang
-  fzf # <C-r> search 
+  zoxide # z
+  fzf # <C-r> search, <M-c> fzf cd 
   tmux
   git 
 )
 
 # set -o vi
-
-eval "$(zoxide init zsh)"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases.zsh
@@ -40,4 +39,4 @@ function tmux-start() {
   fi
 }
 
-[[ $TERM != "xterm-256color" ]] && tmux-start
+tmux-start
