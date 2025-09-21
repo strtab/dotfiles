@@ -39,4 +39,4 @@ function tmux-start() {
   fi
 }
 
-tmux-start
+# tmux-start

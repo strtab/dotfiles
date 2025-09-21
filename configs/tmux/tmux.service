@@ -1,0 +1,15 @@
+[Unit]
+Description=tmux service
+
+[Service]
+Type=forking
+User=user
+ExecStart=/usr/bin/tmux new-session -s master -d
+ExecStop=/usr/bin/tmux kill-session -t master
+Restart=always
+RestartSec=0
+StartLimitBurst=5
+KillMode=none
+
+[Install]
+WantedBy=multi-user.target
