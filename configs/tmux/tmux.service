@@ -1,15 +1,13 @@
 [Unit]
-Description=tmux service
+Description=Tmux detached start
 
 [Service]
 Type=forking
-User=user
+Environment="TERM=xterm-256color"
+Environment="SHELL=/bin/zsh"
 ExecStart=/usr/bin/tmux new-session -s master -d
 ExecStop=/usr/bin/tmux kill-session -t master
-Restart=always
-RestartSec=0
-StartLimitBurst=5
-KillMode=none
+Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

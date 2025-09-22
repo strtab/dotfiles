@@ -22,11 +22,6 @@ function get_mute {
     pactl get-sink-mute @DEFAULT_SINK@ | grep -Po '(?<=Mute: )(yes|no)'
 }
 
-# Uses regex to get brightness from xbacklight
-function get_brightness {
-    sudo light | grep -Po '[0-9]{1,3}' | head -n 1
-}
-
 # Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
 function get_volume_icon {
     volume=$(get_volume)
@@ -34,15 +29,10 @@ function get_volume_icon {
     if [ "$volume" -eq 0 ] || [ "$mute" == "yes" ] ; then
         volume_icon="󰝟"
     elif [ "$volume" -lt 50 ]; then
-        volume_icon="󰕾"
-    else
         volume_icon="󰖀"
+    else
+        volume_icon="󰕾"
     fi
-}
-
-# Always returns the same icon - I couldn't get the brightness-low icon to work with fontawesome
-function get_brightness_icon {
-    brightness_icon=""
 }
 
 function get_album_art {
@@ -82,9 +72,9 @@ function show_volume_notif {
     if [[ $show_music_in_volume_indicator == "true" ]]; then
         current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
 
-        if [[ $show_album_art == "true" ]]; then
-            get_album_art
-        fi
+        # if [[ $show_album_art == "true" ]]; then
+        #     get_album_art
+        # fi
 
         notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume -i "$album_art" "$volume_icon $volume%" "$current_song"
     else
@@ -103,14 +93,6 @@ function show_music_notif {
     fi
 
     notify-send -t $notification_timeout -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$song_title" "$song_artist - $song_album"
-}
-
-# Displays a brightness notification using dunstify
-function show_brightness_notif {
-    brightness=$(get_brightness)
-    echo $brightness
-    get_brightness_icon
-    notify-send -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:$brightness "$brightness_icon $brightness%"
 }
 
 # Main function - Takes user input, "volume_up", "volume_down", "brightness_up", or "brightness_down"
@@ -137,18 +119,6 @@ case $1 in
     # Toggles mute and displays the notification
     pactl set-sink-mute @DEFAULT_SINK@ toggle
     show_volume_notif
-    ;;
-
-    brightness_up)
-    # Increases brightness and displays the notification
-    sudo light -A $brightness_step 
-    show_brightness_notif
-    ;;
-
-    brightness_down)
-    # Decreases brightness and displays the notification
-    sudo light -U $brightness_step
-    show_brightness_notif
     ;;
 
     next_track)

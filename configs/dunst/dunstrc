@@ -167,24 +167,23 @@
 	timeout = 6
 	background = "#604533"
 	foreground = "#9fa0a0"
-	frame_color = "#192022"
-	highlight = "#7ba5dd"
+	frame_color = "#c6c6c6"
+	highlight = "#c6c6c6"
 
 [urgency_normal]
-	script = ~/.config/dunst/scripts/play-sound.sh
 	timeout = 6
 	background = "#604533"
 	foreground = "#9fa0a0"
-	frame_color = "#192022"
-	highlight = "#7ba5dd"
+	frame_color = "#c6c6c6"
+	highlight = "#c6c6c6"
 
 [urgency_critical]
 	script = ~/.config/dunst/scripts/play-sound.sh
 	timeout = 6
 	background = "#604533"
 	foreground = "#9fa0a0"
-	frame_color = "#192022"
-	highlight = "#7ba5dd"
+	frame_color = "#c6c6c6"
+	highlight = "#c6c6c6"
 
 [backlight]
 	summary = "Backlight"

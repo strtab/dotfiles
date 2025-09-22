@@ -1,0 +1,12 @@
+set highlight-active-color "#c6c6c6"
+set highlight-transparency 1
+set guioptions "none"
+
+set default-bg "#101010"
+set recolor-lightcolor rgba(0,0,0,0)
+set recolor                     "true"
+
+
+set synctex-editor-command "nvim"
+
+set font "IBM Plex Mono 20"

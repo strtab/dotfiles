@@ -1,0 +1,27 @@
+[general]
+import = [
+  "~/.config/alacritty/rose-pine-moon.toml"
+]
+live_config_reload = true
+
+[window]
+padding = { x = 52, y = 50 }
+opacity = 1.0
+blur = true
+
+[scrolling]
+history = 0 
+multiplier = 1
+
+[font]
+normal = { family = "IBM Plex Mono", style = "Text" }
+#bold = { family = "IBM Plex Mono", style = "Bold" }
+italic = { family = "IBM Plex Mono", style = "Italic" }
+#bold_italic = { family = "IBM Plex Mono", style = "Italic Smdld" }
+size = 18.0
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
