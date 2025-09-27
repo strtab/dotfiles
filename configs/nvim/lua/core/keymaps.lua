@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-keymap.set("i", "jk", "<Esc>", { desc = "Exit from insert mode" })
+-- keymap.set("i", "jk", "<Esc>", { desc = "Exit from insert mode" })
 keymap.set("n", "<leader>n", ":nohl<CR>", { silent = true, desc = "Clear search" })
 
 -- tabs management --

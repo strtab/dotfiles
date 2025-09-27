@@ -2,11 +2,11 @@ vim.cmd("let g:netrw_liststyle=3")
 
 local opt = vim.opt
 
-vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#5f5f5f" }) -- цвет рамки
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#5f5f5f" })
 vim.o.winblend = 0
 
 -- line numbering
-opt.relativenumber = false
+opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation

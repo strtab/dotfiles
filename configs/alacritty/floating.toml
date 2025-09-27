@@ -1,6 +1,6 @@
 [general]
 import = [
-  "~/.config/alacritty/rose-pine-dawn.toml"
+  "~/.config/alacritty/rose-pine-moon.toml"
 ]
 live_config_reload = true
 

@@ -1,0 +1,55 @@
+* {
+  font-family: "IBM Plex Mono";
+  font-size: 12px;
+}
+
+window#waybar.empty #window {
+  background: rgba(12, 12, 12, 0);
+}
+
+#tray {
+  background-color: #101010;
+  padding: 4px 8px 4px 8px;
+  border-radius: 8px;
+}
+
+#workspaces {
+  background-color: #101010;
+  border-radius: 8px;
+  padding: 4px 4px 4px 6px;
+  margin: 2px 0;
+}
+
+#workspaces button {
+  min-height: 0;
+  padding: 0 5px;
+  color: #f5e0dc;
+}
+
+#workspaces button.empty {
+  color: #58587c;
+}
+
+#workspaces button.visible {
+  color: #89dceb;
+}
+
+#workspaces button.active {
+  color: #fab387;
+}
+
+.modules-right {
+  padding: 0 40px 10px 0;
+}
+
+.modules-center {
+  padding: 0 0 10px 0;
+}
+
+.modules-left {
+  padding: 0 0 10px 40px;
+}
+
+window#waybar {
+  background-color: transparent;
+}

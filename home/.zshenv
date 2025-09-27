@@ -5,3 +5,4 @@ PATH="$HOME/.local/bin:$PATH"
 PATH="/opt/brew/bin:$PATH"
 ZSH="$HOME/.oh-my-zsh"
 ZSH_COMPDUMP=$HOME/.cache/zsh/zcompdump-$HOST-$ZSH_VERSION
+DISABLE_UNTRACKED_FILES_DIRTY="true"

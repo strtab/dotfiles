@@ -1,9 +1,8 @@
 alias ip='ip -c=auto'
+alias gc='git clone --depth 1'
 alias du='du -hs'
-alias help='bash -c --no-profile help'
-alias open='setsid ./.config/i3/scripts/open.sh . 2>/dev/null'
-# <M-c> keybind, omg
-# alias fzd='cd $(fd --hidden -t d . | fzf --scheme=path --no-preview --height=40%)'
+alias ysap='curl style.ysap.sh &>/dev/null | less'
+alias rs='sudo pacman -Rs $(sudo pacman -Qqe | fzf --no-preview)'
 
 # if [ $TERM = 'xterm-kitty' ]; then
 #   alias ssh='kitten ssh' 
