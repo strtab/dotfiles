@@ -1,8 +1,15 @@
 EDITOR=nvim
 TERMINAL=kitty
+
 GOPATH="$HOME/.go"
 PATH="$HOME/.local/bin:$PATH"
 PATH="/opt/brew/bin:$PATH"
 ZSH="$HOME/.oh-my-zsh"
+
+# compdump 
 ZSH_COMPDUMP=$HOME/.cache/zsh/zcompdump-$HOST-$ZSH_VERSION
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# history
+HISTFILE=~/.cache/zsh/history
+HIST_STAMPS="dd/mm/yyyy"

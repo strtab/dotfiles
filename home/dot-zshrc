@@ -1,0 +1,67 @@
+plugins=(
+  zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
+  colored-man-pages
+  gitfast
+  golang
+  zoxide # z
+  fzf # <C-r> and <C-t> search, <M-c> fzf cd and ** search on path
+  tmux
+  git 
+)
+
+source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases.zsh
+
+####################################################
+
+# vi mode
+set -o vi
+
+# vi insert mode bindings
+bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^E' end-of-line
+bindkey -M viins '^P' up-line-or-history
+
+# vi command mode bindings 
+bindkey -M vicmd '^A' beginning-of-line
+bindkey -M vicmd '^E' end-of-line
+bindkey -M vicmd '^P' up-line-or-history
+
+####################################################
+
+# highlighting 
+typeset -A ZSH_HIGHLIGHT_STYLES
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+export ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
+#export ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=black'
+export ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
+
+# Prompt
+
+# Color shortcuts
+R=$fg_no_bold[red]
+B=$fg_no_bold[blue]
+M=$fg_no_bold[magenta]
+RESET=$reset_color
+
+local return_side="%(?..%{$R%}   %{$RESET%})"
+
+PROMPT='%{$M%}%B%1~%b%{$RESET%} %{$M%}%{$RESET%}'
+RPS1="${return_side}"
+
+####################################################
+
+# Tmux autostart
+# function tmux-start() {
+#   if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+#     tmux attach-session -t master 2>/dev/null || \
+#       tmux new-session -s master
+#   fi
+# }
+# tmux-start
+
+####################################################
+
+# needed for history file
+[ ! -d ~/.cache/zsh ] && mkdir -p ~/.cache/zsh
+[ ! -f ~/.cache/zsh/history ] && touch ~/.cache/zsh/history

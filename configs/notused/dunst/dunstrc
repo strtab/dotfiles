@@ -49,47 +49,23 @@
 	word_wrap = yes
 
 	# Ignore newlines '\n' in notifications
-	ignore_newline = no
+	ignore_newline = yes
 
 	### Geometry ###
 
-	# dynamic width from 0 to 300
-	# width = (0, 300)
-	# constant width of 300
+	origin = bottom-left
 	width = (50, 400)
+	height = (50, 50)
+	offset = 0x0
 
-	# The maximum height of a single notification, excluding the frame.
-	height = (50, 300)
+  progress_bar = true
+  progress_bar_height = 14
+  progress_bar_frame_width = 1
+  progress_bar_min_width = 150
+  progress_bar_max_width = 300
 
-	# Position of the notification
-	origin = top-left
-
-	# Offset from the origin
-	offset = 30x40
-
-    # Turn on the progess bar. It appears when a progress hint is passed with
-    # for example dunstify -h int:value:12
-    progress_bar = true
-
-    # Set the progress bar height. This includes the frame, so make sure
-    # it's at least twice as big as the frame width.
-    progress_bar_height = 14
-
-    # Set the frame width of the progress bar
-    progress_bar_frame_width = 1
-
-    # Set the minimum width for the progress bar
-    progress_bar_min_width = 150
-
-    # Set the maximum width for the progress bar
-    progress_bar_max_width = 300
-
-	# Frame
 	frame_width = 0
 	frame_color = "#c6c6c6"
-
-	# The transparency of the window. range: [0; 100]
-	# This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
 	transparency = 0
 
 	# Don't remove messages, if the user is idle (no mouse or keyboard input)
@@ -99,29 +75,15 @@
 
 	follow = mouse
 
-	# Display indicators for URLs (U) and actions (A).
-	show_indicators = no
-
 	# Should a notification popped up from history be sticky or
 	# timeout as if it would normally do.
 	sticky_history = no
 
-	# The height of a single line. If the height is smaller than the font height,
-	# it will get raised to the font height.
-	# This adds empty space above and under the text.
+	show_indicators = no
 	line_height = 8
-
-	# Draw a line of 'separatpr_height' pixel height between two notifications.
-	# Set to 0 to disable
-	separator_height = 3
-
-	# Padding between text and separator
+	separator_height = 3 # Set to 0 to disable
 	padding = 10
-
-	# Horizontal padding
 	horizontal_padding = 15
-
-	# Padding between text and icon.
 	text_icon_padding = 16
 
 	# Define a color for the separator.
@@ -165,14 +127,14 @@
 
 [urgency_low]
 	timeout = 6
-	background = "#604533"
+	background = "#101010"
 	foreground = "#9fa0a0"
 	frame_color = "#c6c6c6"
 	highlight = "#c6c6c6"
 
 [urgency_normal]
 	timeout = 6
-	background = "#604533"
+	background = "#101010"
 	foreground = "#9fa0a0"
 	frame_color = "#c6c6c6"
 	highlight = "#c6c6c6"
@@ -180,7 +142,7 @@
 [urgency_critical]
 	script = ~/.config/dunst/scripts/play-sound.sh
 	timeout = 6
-	background = "#604533"
+	background = "#101010"
 	foreground = "#9fa0a0"
 	frame_color = "#c6c6c6"
 	highlight = "#c6c6c6"

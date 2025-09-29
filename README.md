@@ -1,6 +1,6 @@
 ## Installation
 
 ```shell
-stow -t ~ home
+stow -t --dotfiles ~ home
 stow -t ~/.config configs
 ```

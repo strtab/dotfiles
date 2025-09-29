@@ -6,7 +6,7 @@ $env.config = {
   error_style: "fancy"
 
   table: {
-        mode: single
+        mode: rounded
         index_mode: always
         show_empty: false
         padding: { left: 1, right: 1 }

@@ -1,0 +1,45 @@
+{
+  "control-center-positionX": "center",
+  "control-center-positionY": "bottom",
+
+  "control-center-width": 650,
+  "control-center-height": 400,
+
+  "control-center-margin-top": 25,
+  "control-center-margin-bottom": 25,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 0,
+
+  "positionX": "bottom",
+  "positionY": "right",
+
+  "notification-icon-size": 0,
+  "notification-window-width": 300,
+
+  "timeout": 4,
+  "timeout-low": 3,
+  "timeout-critical": 0,
+  "transition-time": 200,
+
+  "hide-on-clear": false,
+  "fit-to-screen": false,
+
+  "text-empty": "Empty",
+
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear"
+    },
+    "mpris": {
+      "image-size": 100,
+      "image-radius": 10
+    },
+    "volume": {
+      "label": ""
+    }
+  },
+
+  "widgets": ["volume", "title", "notifications"]
+}

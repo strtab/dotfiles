@@ -2,11 +2,7 @@ alias ip='ip -c=auto'
 alias gc='git clone --depth 1'
 alias du='du -hs'
 alias ysap='curl style.ysap.sh &>/dev/null | less'
-alias rs='sudo pacman -Rs $(sudo pacman -Qqe | fzf --no-preview)'
-
-# if [ $TERM = 'xterm-kitty' ]; then
-#   alias ssh='kitten ssh' 
-# fi
+alias procs="ps -eo uid,exe | grep $UID | awk '{print $2}' | xargs -n1 basename | sort | uniq -c | fzf --no-preview"
 
 # bat hightlights
 alias cat='bat --no-pager'

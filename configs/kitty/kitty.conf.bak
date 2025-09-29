@@ -1,6 +1,6 @@
 enable_audio_bell no
 window_padding_width 40
-font_family family="IBM Plex Mono"
+font_family      family="BlexMono Nerd Font Mono"
 italic_font      auto
 bold_font        auto
 bold_italic_font auto
@@ -19,3 +19,8 @@ confirm_os_window_close 0
 
 include rose-pine-moon.conf
 
+
+# BEGIN_KITTY_THEME
+# Rosé Pine
+include current-theme.conf
+# END_KITTY_THEME
