@@ -77,8 +77,9 @@
   },
 
   "bluetooth": {
-    "format": "<span size='12000'> </span>",
-    "format-connected": "<span size='12000' foreground='#8cb6ff'></span>",
+    "format": "",
+    "format-off": "󰂲",
+    "format-connected": "󰂰",
     "tooltip-format": "{status}",
     "on-click": "bluetuith"
   },
