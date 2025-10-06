@@ -2,6 +2,7 @@
 @define-color fg #c6c6c6;
 @define-color fg_secondary #4E4E4E;
 @define-color accent #fab387;
+@define-color dark #282828;
 
 * {
   border: none;
@@ -11,13 +12,29 @@
   min-height: 0;
 }
 
+tooltip {
+  background: @bg;
+  border-radius: 16px;
+  padding: 5px 12px;
+  margin: 5px;
+}
+
+tooltip label {
+  color: @fg;
+  font-weight: bold;
+  font-family: "BlexMono Nerd Font";
+  font-size: 16px;
+}
+
 #workspaces {
+  background: @bg;
   margin: 5px 5px;
   padding: 8px 5px;
   border-radius: 16px;
 }
 
 #workspaces button {
+  background: @dark;
   padding: 0px 5px;
   margin: 0px 3px;
   border-radius: 16px;
@@ -75,6 +92,18 @@
 
 #battery.warning:not(.charging) {
   color: @accent;
+}
+
+#pulseaudio {
+  border-radius: 16px 0 0 16px; /* rounded left */
+  padding: 5px 8px;
+  margin: 5px 0 5px 5px;
+}
+
+#bluetooth {
+  border-radius: 0 16px 16px 0; /* rounded right */
+  padding: 5px 10px;
+  margin: 5px 5px 5px 0;
 }
 
 #custom-playerctl {
