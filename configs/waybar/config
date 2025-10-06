@@ -3,7 +3,7 @@
   "layer": "bottom",
 
   "modules-left": [
-    "hyprland/window",
+    "hyprland/window"
   ],
   "modules-center": [
     "custom/playerctl",
@@ -17,7 +17,6 @@
     "bluetooth", 
     "clock"
   ],
-    
 
   "clock": {
     "format": "{:%H:%M}",
@@ -61,12 +60,12 @@
   },
 
   "custom/playerlabel": {
-    "format": "{text}",
+    "format": " ",
+    "format-alt": "{text}",
     "return-type": "json",
-    "max-length": 30,
+    "max-length": 20,
     "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\"}' || echo '{\"text\":\"No Media \"}'",
     "exec-if": "which playerctl",
-    "on-click": "qs ipc call mediaControls toggle",
     "interval": 3
   },
 
@@ -90,7 +89,9 @@
     "format": "{title}",
     "max-length": 34,
     "rewrite": {
-      "": "Nothing  "
+      "": "Nothing  ",
+      "(.*) — Zen Browser": "Zen Browser",
+      "_zsh_tmux_plugin_run": "Tmux"
     }
   },
 
