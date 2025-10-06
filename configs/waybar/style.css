@@ -1,53 +1,108 @@
+@define-color bg #101010;
+@define-color fg #c6c6c6;
+@define-color fg_secondary #4E4E4E;
+@define-color accent #fab387;
+
 * {
-  font-family: "IBM Plex Mono";
-  font-size: 12px;
-}
-
-window#waybar.empty #window {
-  background: rgba(12, 12, 12, 0);
-}
-
-#tray {
-  background-color: #101010;
-  padding: 4px 8px 4px 8px;
-  border-radius: 8px;
+  border: none;
+  border-radius: 1px;
+  font-family: "BlexMono Nerd Font";
+  font-size: 13px;
+  min-height: 0;
 }
 
 #workspaces {
-  background-color: #101010;
-  border-radius: 8px;
-  padding: 4px 4px 4px 6px;
-  margin: 2px 0;
+  margin: 5px 5px;
+  padding: 8px 5px;
+  border-radius: 16px;
 }
 
 #workspaces button {
-  min-height: 0;
-  padding: 0 5px;
-  color: #f5e0dc;
-}
-
-#workspaces button.empty {
-  color: #58587c;
-}
-
-#workspaces button.visible {
-  color: #89dceb;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  color: #fab387;
+  background-color: @fg_secondary;
+  border-radius: 16px;
+  min-width: 50px;
+  transition: all 0.3s ease-in-out;
 }
 
-.modules-right {
-  padding: 0 40px 10px 0;
+#workspaces button:hover {
+  border-radius: 16px;
+  min-width: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+#clock,
+#battery,
+#network {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+  border: solid 0px #58587c;
+}
+
+#tray {
+  margin: 5px;
+  border-radius: 28px;
+  padding: 0px 12px;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#window,
+#hyprland-window,
+#bluetooth,
+#custom-notify,
+#custom-playerctl,
+#custom-playerlabel,
+#custom-search {
+  background: @bg;
+  border-radius: 16px;
+  padding: 5px 12px;
+  margin: 5px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  color: @fg;
+}
+
+#battery.warning:not(.charging) {
+  color: @accent;
+}
+
+#custom-playerctl {
+  border-radius: 16px 0 0 16px; /* rounded left */
+  padding: 5px 8px;
+  margin: 5px 0 5px 5px;
+}
+
+#custom-playerlabel {
+  border-radius: 0 16px 16px 0; /* rounded right */
+  padding: 5px 10px;
+  margin: 5px 5px 5px 0;
+}
+
+#battery.charging {
+  color: #89dceb;
+}
+
+.modules-left {
+  padding: 0 0 10px 40px;
 }
 
 .modules-center {
   padding: 0 0 10px 0;
 }
 
-.modules-left {
-  padding: 0 0 10px 40px;
+.modules-right {
+  padding: 0 40px 10px 0;
 }
 
 window#waybar {

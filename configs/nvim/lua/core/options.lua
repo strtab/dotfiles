@@ -26,4 +26,17 @@ opt.smartcase = true
 opt.cursorline = true
 
 -- clipboard
--- opt.clipboard:append("xclip")
+vim.opt.clipboard = "unnamedplus"
+
+vim.g.clipboard = {
+	name = "wl-clipboard",
+	copy = {
+		["+"] = "wl-copy --foreground --type text/plain",
+		["*"] = "wl-copy --foreground --type text/plain",
+	},
+	paste = {
+		["+"] = "wl-paste --no-newline",
+		["*"] = "wl-paste --no-newline",
+	},
+	cache_enabled = 1,
+}

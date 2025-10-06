@@ -23,7 +23,7 @@
 /* ── Base Reset ───────────────────────────────────────────────────── */
 * {
   font-family: "IBM Plex Mono", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   color: @theme_fg;
   border: none;
   border-radius: 8;
@@ -80,7 +80,7 @@
 
 .widget-title label {
   font-family: "IBM Plex Mono";
-  font-size: 14px;
+  font-size: 16px;
   color: @theme_fg_secondary;
   margin-left: 4px;
   background: none;
@@ -88,7 +88,7 @@
 
 .widget-title button {
   font-family: "IBM Plex Mono";
-  font-size: 14px;
+  font-size: 16px;
   color: @theme_fg;
   background-color: @button_bg;
   border: none;

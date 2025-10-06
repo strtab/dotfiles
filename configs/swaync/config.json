@@ -1,16 +1,16 @@
 {
   "control-center-positionX": "center",
-  "control-center-positionY": "bottom",
+  "control-center-positionY": "right",
 
   "control-center-width": 650,
   "control-center-height": 400,
 
-  "control-center-margin-top": 25,
+  "control-center-margin-top": 400,
   "control-center-margin-bottom": 25,
-  "control-center-margin-right": 0,
-  "control-center-margin-left": 0,
+  "control-center-margin-right": 25,
+  "control-center-margin-left": 25,
 
-  "positionX": "bottom",
+  "positionX": "top",
   "positionY": "right",
 
   "notification-icon-size": 0,
@@ -22,7 +22,7 @@
   "transition-time": 200,
 
   "hide-on-clear": false,
-  "fit-to-screen": false,
+  "fit-to-screen": true,
 
   "text-empty": "Empty",
 
@@ -41,5 +41,5 @@
     }
   },
 
-  "widgets": ["volume", "title", "notifications"]
+  "widgets": ["title", "notifications"]
 }
