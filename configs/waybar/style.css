@@ -3,6 +3,7 @@
 @define-color fg_secondary #4E4E4E;
 @define-color accent #fab387;
 @define-color dark #282828;
+@define-color border #3E3A39;
 
 * {
   border: none;
@@ -75,6 +76,8 @@ tooltip label {
 #custom-search {
   background: @bg;
   border-radius: 16px;
+  border: 1px;
+  border-color: @border;
   padding: 5px 12px;
   margin: 5px;
   font-weight: bold;
