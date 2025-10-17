@@ -1,7 +1,7 @@
 @define-color bg #101010;
 @define-color fg #c6c6c6;
 @define-color fg_secondary #4E4E4E;
-@define-color accent #fab387;
+@define-color accent #827876;
 @define-color dark #282828;
 @define-color border #3E3A39;
 
@@ -50,13 +50,14 @@ tooltip label {
 }
 
 #workspaces button:hover {
-  background: linear-gradient(
-    45deg,
-    #8aadf4 0%,
-    #b7bdf8 43%,
-    #7dc4e4 80%,
-    #91d7e3 100%
-  );
+  /* background: linear-gradient( */
+  /*   45deg, */
+  /*   #8aadf4 0%, */
+  /*   #b7bdf8 43%, */
+  /*   #7dc4e4 80%, */
+  /*   #91d7e3 100% */
+  /* ); */
+  background: @accent;
   border-radius: 16px;
   min-width: 50px;
   transition: all 0.4s ease-in-out;

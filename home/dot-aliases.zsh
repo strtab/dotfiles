@@ -1,3 +1,4 @@
+alias j='jobs'
 alias ip='ip -c=auto'
 alias gc='git clone --depth 1'
 alias du='du -hs'
@@ -22,6 +23,6 @@ alias svi='sudo nvim'
 # eza
 alias tree='eza --tree -L 2'
 alias ls='eza' 
-alias l='eza -la --no-time'
+alias ll='eza -la --no-time'
 alias la='eza -a --no-time'
-alias ll='eza -l --no-time'
+alias l='eza -l --no-time'
