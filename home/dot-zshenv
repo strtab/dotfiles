@@ -1,5 +1,5 @@
 EDITOR=nvim
-TERMINAL=kitty
+TERMINAL=alacritty
 
 GOPATH="$HOME/.go"
 PATH="$HOME/.local/bin:$PATH"

@@ -90,6 +90,7 @@
     "tooltip": false,
     "format": "{title}",
     "max-length": 34,
+    "on-click": "alacritty --class otter-launcher --config-file ~/.config/alacritty/otter-launcher.toml -e otter-launcher",
     "rewrite": {
       "": "Nothing  ",
       "(.*) — Zen Browser": "Zen Browser",
