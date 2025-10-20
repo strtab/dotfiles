@@ -1,8 +1,6 @@
 plugins=(
   zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
   colored-man-pages
-  gitfast
-  golang
   zoxide # z
   fzf # <C-r> and <C-t> search, <M-c> fzf cd and ** search on path
   tmux
@@ -13,21 +11,43 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases.zsh
 
 ####################################################
+# Vi mode
 
-# vi mode
 set -o vi
 
-# vi insert mode bindings
+zle-keymap-select() {
+  if [[ ${KEYMAP} == vicmd ]]; then
+    echo -ne '\e[1 q' # Block cursor for normal mode
+  else
+    echo -ne '\e[5 q' # Beam cursor for insert mode
+  fi
+}
+zle -N zle-keymap-select
+
+zle-line-init() {
+  zle -K viins
+  echo -ne '\e[5 q'
+}
+zle -N zle-line-init
+
+vi-yank-clipboard() {
+  zle vi-yank
+  echo "$CUTBUFFER" | wl-copy
+}
+zle -N vi-yank-clipboard
+
+bindkey -M vicmd 'y' vi-yank-clipboard
+bindkey -M vicmd ' e' edit-command-line # space-e
+
 bindkey -M viins '^A' beginning-of-line
 bindkey -M viins '^E' end-of-line
 bindkey -M viins '^P' up-line-or-history
 
-# vi command mode bindings 
 bindkey -M vicmd '^A' beginning-of-line
 bindkey -M vicmd '^E' end-of-line
-bindkey -M vicmd '^P' up-line-or-history
 
 ####################################################
+# Prompt
 
 # highlighting 
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -35,8 +55,6 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 export ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
 #export ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=black'
 export ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
-
-# Prompt
 
 # Color shortcuts
 R=$fg_no_bold[red]
@@ -50,9 +68,9 @@ PROMPT='%{$M%}%B%1~%b%{$RESET%} %{$M%}%{$RESET%}'
 RPS1="${return_side}"
 
 ####################################################
-
 # Tmux autostart
-# function tmux-start() {
+
+# tmux-start() {
 #   if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
 #     tmux attach-session -t master 2>/dev/null || \
 #       tmux new-session -s master
