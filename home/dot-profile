@@ -1,0 +1,6 @@
+EDITOR=nvim
+TERMINAL=alacritty
+
+export GOPATH="$HOME/.go"
+PATH="$PATH:$HOME/go/bin:$HOME/.go/bin"
+PATH="$HOME/.local/bin:$PATH"

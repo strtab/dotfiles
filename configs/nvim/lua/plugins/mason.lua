@@ -24,23 +24,22 @@ return {
 		})
 
 		mason_lspconfig.setup({
-			-- list of servers for mason to install
+			-- list of lang servers
 			ensure_installed = {
-				-- "clang-format",
-				"angularls",
 				"ansiblels",
 				"dockerls",
-				"helm_ls",
 				"lua_ls",
 				"yamlls",
 				"bashls",
-				-- "clangd",
+				"clangd",
 				"gopls",
 			},
 		})
 
 		mason_tool_installer.setup({
+			-- list of formatters
 			ensure_installed = {
+				"clang-format",
 				"prettier",
 				"stylua",
 			},

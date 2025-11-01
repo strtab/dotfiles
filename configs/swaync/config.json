@@ -5,7 +5,7 @@
   "control-center-width": 650,
   "control-center-height": 400,
 
-  "control-center-margin-top": 400,
+  "control-center-margin-top": 450,
   "control-center-margin-bottom": 25,
   "control-center-margin-right": 25,
   "control-center-margin-left": 25,
@@ -13,31 +13,24 @@
   "positionX": "top",
   "positionY": "right",
 
-  "notification-icon-size": 0,
-  "notification-window-width": 300,
+  "notification-icon-size": -1,
+  "notification-window-width": 350,
 
   "timeout": 8,
   "timeout-low": 8,
   "timeout-critical": 0,
   "transition-time": 200,
 
-  "hide-on-clear": false,
+  "hide-on-clear": true,
   "fit-to-screen": true,
 
-  "text-empty": "Empty",
+  /* "text-empty": "Empty", */
 
   "widget-config": {
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
       "button-text": "Clear"
-    },
-    "mpris": {
-      "image-size": 100,
-      "image-radius": 10
-    },
-    "volume": {
-      "label": ""
     }
   },
 

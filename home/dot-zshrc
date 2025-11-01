@@ -1,10 +1,13 @@
+# if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt; then
+#     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+# fi
+# clear
+
 plugins=(
   zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
   colored-man-pages
-  zoxide # z
+  zoxide # z command
   fzf # <C-r> and <C-t> search, <M-c> fzf cd and ** search on path
-  tmux
-  git 
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -51,10 +54,10 @@ bindkey -M vicmd '^E' end-of-line
 
 # highlighting 
 typeset -A ZSH_HIGHLIGHT_STYLES
-export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-export ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
-#export ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=black'
-export ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
+# ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=black'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
 
 # Color shortcuts
 R=$fg_no_bold[red]

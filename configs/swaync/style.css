@@ -1,7 +1,7 @@
-/* ── 1. Palette & Globals (Matching Waybar Theme) ──────────────────── */
-@define-color theme_fg #f5e0dc;
-@define-color theme_fg_secondary #58587c;
-@define-color theme_bg #101010;
+/* ──  Palette & Globals ───────────────────────────────────────────── */
+@define-color fg #f5e0dc;
+@define-color fg_secondary #58587c;
+@define-color bg #101010;
 @define-color popup_bg rgba(16, 16, 16, 0.95);
 @define-color module_bg #101010;
 @define-color module_hover_bg rgba(16, 16, 16, 0.8);
@@ -16,17 +16,15 @@
 @define-color icon_secondary #58587c;
 @define-color slider_trough_bg rgba(88, 88, 124, 0.4);
 @define-color slider_thumb_bg #fab387;
-@define-color close_button_bg rgba(137, 220, 235, 0.2);
-@define-color close_button_hover_bg rgba(137, 220, 235, 0.4);
-@define-color mpris_player_bg rgba(16, 16, 16, 0.9);
 
 /* ── Base Reset ───────────────────────────────────────────────────── */
 * {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono";
   font-size: 20px;
-  color: @theme_fg;
+  font-weight: 600;
+  color: @fg;
   border: none;
-  border-radius: 8;
+  border-radius: 0;
   background: none;
   padding: 0;
   margin: 0;
@@ -35,16 +33,15 @@
   outline: none;
 }
 
-/* ── 2. Control Center Container ─────────────────────────────────── */
+/* ── Control Center Container ─────────────────────────────────── */
 .control-center {
-  background-color: @theme_bg;
+  background-color: @bg;
   border: 2px solid @border_light;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 28px;
-  min-width: 380px;
 }
 
-/* ── 3. Widget Modules ───────────────────────────────────────────── */
+/* ── Widget Modules ───────────────────────────────────────────── */
 .widget-mpris,
 .widget-volume,
 .widget-backlight,
@@ -70,7 +67,7 @@
   margin-bottom: 0;
 }
 
-/* Widget Titles */
+/* ── Widget Titles ─────────────────────────────────────── */
 .widget-title {
   background: transparent;
   border: none;
@@ -79,17 +76,15 @@
 }
 
 .widget-title label {
-  font-family: "IBM Plex Mono";
   font-size: 16px;
-  color: @theme_fg_secondary;
+  color: @fg_secondary;
   margin-left: 4px;
   background: none;
 }
 
 .widget-title button {
-  font-family: "IBM Plex Mono";
   font-size: 16px;
-  color: @theme_fg;
+  color: @fg;
   background-color: @button_bg;
   border: none;
   border-radius: 8px;
@@ -102,156 +97,14 @@
   background-color: @button_hover_bg;
 }
 
-/* ── 4. MPRIS Widget ────────────────────────────────────────────── */
-.widget-mpris {
-  padding: 0;
-  border: none;
-  border-radius: 8px;
-}
-
-.widget-mpris .widget-mpris-player {
-  background-color: @mpris_player_bg;
-  border-radius: 8px;
-  border: 2px solid @border_medium;
-  padding: 16px;
-}
-
-.mpris-background {
-  filter: blur(10px) brightness(0.6);
-}
-
-.widget-mpris .widget-mpris-album-art {
-  min-width: 60px;
-  min-height: 60px;
-  border-radius: 8px;
-  margin-right: 12px;
-}
-
-.widget-mpris .widget-mpris-title {
-  font-size: 18px;
-  color: @theme_fg;
-  margin-bottom: 2px;
-}
-
-.widget-mpris .widget-mpris-subtitle {
-  font-size: 12px;
-  color: @accent_color;
-}
-
-.widget-mpris .widget-mpris-player button {
-  all: unset;
-  background: @button_bg;
-  border-radius: 50%;
-  padding: 4px;
-  color: @icon_secondary;
-  font-size: 14px;
-  min-width: 28px;
-  min-height: 28px;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
-}
-
-.widget-mpris .widget-mpris-player button:hover {
-  background-color: @button_hover_bg;
-  color: @icon_primary;
-}
-
-.widget-mpris .widget-mpris-player button:disabled {
-  color: alpha(@icon_secondary, 0.3);
-}
-
-/* ── 5. Sliders (Volume, Backlight) ─────────────────────────────── */
-.widget-volume label,
-.widget-backlight label {
-  font-size: 16px;
-  color: @icon_primary;
-  min-width: 20px;
-  margin-right: 12px;
-}
-
-scale trough {
-  min-height: 8px;
-  border-radius: 4px;
-  background-color: @slider_trough_bg;
-}
-
-scale trough progress {
-  min-height: 8px;
-  border-radius: 4px;
-  background-color: @accent_color;
-  transition: background-color 0.15s ease;
-}
-
-scale:hover trough progress {
-  background-color: @accent_color;
-  box-shadow: 0 0 6px rgba(250, 179, 135, 0.4);
-}
-
-trough highlight {
-  padding: 4px;
-  background: @accent_color;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(250, 179, 135, 0.3);
-  transition: all 0.7s ease;
-}
-
-scale slider {
-  min-width: 12px;
-  min-height: 12px;
-  background-color: @slider_thumb_bg;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* ── 6. Button Grid ─────────────────────────────────────────────── */
-.widget-buttons-grid > flowbox {
-  padding: 0;
-  background: none;
-}
-
-.widget-buttons-grid > flowbox > flowboxchild {
-  padding: 2px;
-  background: none;
-}
-
-.widget-buttons-grid > flowbox > flowboxchild > button {
-  background-color: @module_bg;
-  border: 2px solid @border_medium;
-  border-radius: 8px;
-  padding: 8px;
-  min-width: 20px;
-  min-height: 20px;
-  color: @icon_secondary;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease,
-    border-color 0.15s ease;
-}
-
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background-color: @button_hover_bg;
-  color: @icon_primary;
-  border-color: @border_light;
-}
-
-.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
-  background-color: @accent_color;
-  color: #101010;
-}
-
-.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
-  background-color: @accent_color_hover;
-  color: #101010;
-}
-
-/* ── 7. Notification Center ─────────────────────────────────────── */
+/* ── Notification Center ─────────────────────────────────────── */
 .control-center-list {
   background-color: transparent;
   scrollbar-width: none;
 }
 
 .control-center .notification-row {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .control-center .notification-background {
@@ -268,46 +121,29 @@ scale slider {
 }
 
 .control-center .notification .summary {
-  font-size: 14px;
-  color: @theme_fg;
+  font-size: 16px;
 }
 
 .control-center .notification .body {
-  font-size: 14px;
-  color: @theme_fg_secondary;
+  font-size: 16px;
+  color: @fg_secondary;
 }
 
 .control-center .notification .time {
   font-size: 14px;
-  color: @theme_fg_secondary;
+  color: @fg_secondary;
   margin-right: 45px;
   margin-top: 2px;
 }
 
-.control-center .close-button {
-  border-radius: 4px;
-  padding-left: 5px;
-  transition: background-color 0.15s ease;
-}
-
-.control-center .close-button:hover {
-  background-color: @close_button_hover_bg;
-  padding-left: 5px;
-}
-
-.control-center .close-button image {
-  margin-right: 8px;
-  color: @accent_color_hover;
-}
-
 .control-center .notification image {
   margin-right: 8px;
-  min-width: 32px;
-  min-height: 32px;
+  max-width: 32px;
+  max-height: 32px;
   border-radius: 4px;
 }
 
-/* ── 8. Floating Notifications ─────────────────────────────────── */
+/* ── Floating Notifications ─────────────────────────────────── */
 .floating-notifications .notification-row {
   margin-top: 10px;
   margin-right: 10px;
@@ -317,36 +153,25 @@ scale slider {
   background-color: @popup_bg;
   border: 2px solid @border_light;
   border-radius: 8px;
-  padding: 12px;
+  padding: 16px 12px;
   margin: 4px 8px;
   transition: background-color 0.15s ease;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.floating-notifications .notification-row:hover .notification-background {
-  background-color: alpha(@module_hover_bg, 0.9);
+.floating-notifications .notification .image {
+  border: 2px solid @border_medium;
+  max-width: 16px;
+  max-height: 16px;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
 .floating-notifications .notification .summary {
-  font-size: 14px;
-  color: @theme_fg;
+  font-size: 16px;
+  color: @fg;
 }
 
 .floating-notifications .notification .body {
-  font-size: 14px;
-  color: @theme_fg_secondary;
-}
-
-.floating-notifications .notification .time {
-  font-size: 11px;
-  color: @icon_secondary;
-  margin-left: 8px;
-}
-
-.floating-notifications .close-button {
-  border-radius: 4px;
-  min-width: 20px;
-  min-height: 20px;
-  transition: background-color 0.15s ease;
+  font-size: 16px;
+  color: @fg_secondary;
 }

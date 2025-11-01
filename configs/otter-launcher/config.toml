@@ -1,5 +1,5 @@
 [general]
-default_module = "gg"
+default_module = "ch"
 empty_module = "app"
 exec_cmd = "sh -c" 
 vi_mode = true 
@@ -12,7 +12,7 @@ cheatsheet_entry = "?"
 cheatsheet_viewer = """
 hyprctl dispatch resizeactive exact 490 390 &>/dev/null
 hyprctl dispatch centerwindow &>/dev/null
-bat --paging always --style snip 2>/dev/null
+bat --paging always --style snip &>/dev/null
 hyprctl dispatch resizeactive exact 490 300 &>/dev/null
 hyprctl dispatch centerwindow &>/dev/null
 clear
@@ -23,11 +23,12 @@ clear
 header = """
  \u001B[34;1m \u001B[0m """
 list_prefix = "    "
-selection_prefix = " \u001B[31;1m  ▌"
+selection_prefix = " \u001B[31;1m > "
 indicator_with_arg_module = ""
 indicator_no_arg_module = ""
 place_holder = "type & search"
-default_module_message = "    \u001B[33msearch\u001B[0m the internet"
+# default_module_message = "    \u001B[33msearch\u001B[0m the internet"
+default_module_message = "    \u001B[33mget\u001B[0m cheet sheet"
 suggestion_mode = "list"
 suggestion_lines = 4
 prefix_color = "\u001B[33m"
@@ -49,30 +50,41 @@ url_encode = true # should be true when calling webpages; this ensures special c
 unbind_proc = true # run cmd in a forked shell as opposed to as a child process; useful for launching gui programs; taken as false if not explicitly set
 
 [[modules]]
+description = "sheet sheet"
+with_argument = true
+prefix = "ch"
+cmd = """
+hyprctl dispatch resizeactive exact 1200 800 &>/dev/null
+hyprctl dispatch centerwindow &>/dev/null
+curl "cht.sh/{}" 2>/dev/null | bat --paging always --style snip 2>/dev/null
+"""
+
+
+[[modules]]
 description = "translate"
+with_argument = true 
 prefix = "tr"
 cmd = """ 
 LANG="ru"
-
 string="{}"
-lang=$(trans -id "$string" | awk '$1 == "/^Code" { print $2 }')
-
-if [[ "$lang" = "en" ]]; then
-  trans -b :"$LANG" "$string" | bat --paging always --style snip 2>/dev/null
-else
-  trans -b "$string" | bat --paging always --style snip 2>/dev/null
+len=${#string}
+if (( len > 20 )); then
+  hyprctl dispatch resizeactive exact 650 300 &>/dev/null
+  hyprctl dispatch centerwindow &>/dev/null
 fi
+{
+  echo "$(trans -b "$string")"
+  echo -e "$(trans -b :"$LANG" "$string")"
+} | bat --paging always --style snip 2>/dev/null
 """ 
-with_argument = true 
 
-# fzf is needed to run below functions
 [[modules]]
 description = "launch program"
 prefix = "app"
 cmd = """
-hyprctl dispatch resizeactive exact 580 420 2>/dev/null
-hyprctl dispatch centerwindow 2>/dev/null
-hyprctl dispatch pin 2>/dev/null
+hyprctl dispatch resizeactive exact 580 420 &>/dev/null
+hyprctl dispatch centerwindow &>/dev/null
+hyprctl dispatch pin &>/dev/null
 desktop_file() {
 find /usr/share/applications -name "*.desktop" 2>/dev/null
 find /usr/local/share/applications -name "*.desktop" 2>/dev/null
@@ -89,9 +101,9 @@ echo "$selected" | while read -r line ; do setsid -f gtk-launch "$(basename $lin
 description = "volume control"
 prefix = "vo"
 cmd = """
-hyprctl dispatch resizeactive exact 1280 720 2>/dev/null
-hyprctl dispatch centerwindow 2>/dev/null
-hyprctl dispatch pin 2>/dev/null
+hyprctl dispatch resizeactive exact 1280 720 &>/dev/null
+hyprctl dispatch centerwindow &>/dev/null
+hyprctl dispatch pin &>/dev/null
 pulsemixer 2>/dev/null
 """
 
@@ -99,9 +111,9 @@ pulsemixer 2>/dev/null
 description = "bluetooth control"
 prefix = "bl"
 cmd = """
-hyprctl dispatch resizeactive exact 800 500 2>/dev/null
-hyprctl dispatch centerwindow 2>/dev/null
-hyprctl dispatch pin 2>/dev/null
+hyprctl dispatch resizeactive exact 800 500 &>/dev/null
+hyprctl dispatch centerwindow &>/dev/null
+hyprctl dispatch pin &>/dev/null
 bluetuith 2>/dev/null
 """
 
@@ -109,9 +121,9 @@ bluetuith 2>/dev/null
 description = "clipboard history"
 prefix = "cl"
 cmd = """
-hyprctl dispatch resizeactive exact 580 420 2>/dev/null
-hyprctl dispatch centerwindow 2>/dev/null
-hyprctl dispatch pin 2>/dev/null
+hyprctl dispatch resizeactive exact 580 420 &>/dev/null
+hyprctl dispatch centerwindow &>/dev/null
+hyprctl dispatch pin &>/dev/null
 cliphist list | fzf --no-sort --no-preview | cliphist decode | wl-copy
 """
 
@@ -122,7 +134,7 @@ cmd = """
 function power {
 if [[ -n $1 ]]; then
 case $1 in
-"lock") setsid hyprlock ;;
+"lock") setsid hyprlock &>/dev/null | echo "\n  \u001B[34;1m \u001B[0m Lock..." ;;
 "suspend") systemctl suspend ;;
 "reboot") systemctl reboot ;;
 "shutdown") systemctl poweroff ;;
