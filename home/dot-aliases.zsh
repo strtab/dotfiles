@@ -6,6 +6,9 @@ alias ysap='curl style.ysap.sh &>/dev/null | less'
 alias procs="ps -eo uid,exe | grep $UID | awk '{print $2}' | xargs -n1 basename | sort | uniq -c | fzf --no-preview"
 alias ku="kubectl"
 
+alias s="yay -Ss"
+alias i="yay -S"
+
 # bat hightlights
 alias cat='bat --no-pager'
 alias ports='ss -tulan | bat -l log'

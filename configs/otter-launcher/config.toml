@@ -23,7 +23,7 @@ clear
 header = """
  \u001B[34;1m \u001B[0m """
 list_prefix = "    "
-selection_prefix = " \u001B[31;1m > "
+selection_prefix = " \u001B[31;1m   "
 indicator_with_arg_module = ""
 indicator_no_arg_module = ""
 place_holder = "type & search"
@@ -92,7 +92,8 @@ find "$HOME/.local/share/applications" -name "*.desktop" 2>/dev/null
 find /var/lib/flatpak/exports/share/applications -name "*.desktop" 2>/dev/null
 find "$HOME/.local/share/flatpak/exports/share/applications" -name "*.desktop" 2>/dev/null
 }
-selected="$(desktop_file | sed 's/.desktop$//g' | sort | fzf -m -d / --with-nth -1 --reverse --padding 1,3 --prompt 'Launch Apps: ')"
+# selected="$(desktop_file | sed 's/.desktop$//g' | sort | fzf -m -d / --with-nth -1 --reverse --padding 1,3 --prompt 'Launch Apps: ')"
+selected="$(desktop_file | sort | fzf -m -d / --with-nth -1 --reverse --padding 1,3 --prompt 'Launch Apps: ')"
 [ -z "$selected" ] && exit
 echo "$selected" | while read -r line ; do setsid -f gtk-launch "$(basename $line)"; done
 """

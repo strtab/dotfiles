@@ -12,6 +12,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases.zsh
+source $HOME/.greeter.zsh
 
 ####################################################
 # Vi mode
@@ -50,6 +51,18 @@ bindkey -M vicmd '^A' beginning-of-line
 bindkey -M vicmd '^E' end-of-line
 
 ####################################################
+# Yazi
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+####################################################
+
 # Prompt
 
 # highlighting 
@@ -71,18 +84,10 @@ PROMPT='%{$M%}%B%1~%b%{$RESET%} %{$M%}%{$RESET%}'
 RPS1="${return_side}"
 
 ####################################################
-# Tmux autostart
-
-# tmux-start() {
-#   if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-#     tmux attach-session -t master 2>/dev/null || \
-#       tmux new-session -s master
-#   fi
-# }
-# tmux-start
-
-####################################################
 
 # needed for history file
 [ ! -d ~/.cache/zsh ] && mkdir -p ~/.cache/zsh
 [ ! -f ~/.cache/zsh/history ] && touch ~/.cache/zsh/history
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

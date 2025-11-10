@@ -7,3 +7,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # history
 HISTFILE=~/.cache/zsh/history
 HIST_STAMPS="dd/mm/yyyy"
+
+FZF_DEFAULT_OPTS="
+  --color=fg:#797593,hl:#d7827e
+  --color=spinner:#EA9A97"
