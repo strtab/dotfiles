@@ -8,7 +8,7 @@ end = { foreground = "#c4a7e7", background = "CellBackground" }
 
 [colors.primary]
 foreground = "#e0def4"
-background = "#101010"
+background = "#101114"
 
 [colors.bright]
 black = "#6e6a86"

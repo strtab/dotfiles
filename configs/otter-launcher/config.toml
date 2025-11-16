@@ -59,6 +59,14 @@ hyprctl dispatch centerwindow &>/dev/null
 curl "cht.sh/{}" 2>/dev/null | bat --paging always --style snip 2>/dev/null
 """
 
+[[modules]]
+description = "install package"
+prefix = "pkg"
+cmd = """ 
+hyprctl dispatch resizeactive exact 1200 800 &>/dev/null
+hyprctl dispatch centerwindow &>/dev/null
+$HOME/.config/otter-launcher/pkgsearch 2>/dev/null
+""" 
 
 [[modules]]
 description = "translate"

@@ -10,7 +10,7 @@ return {
 			-- Optionally disable cmp source if using virtual text only
 			enable_cmp_source = true,
 			virtual_text = {
-				enabled = true,
+				enabled = false,
 
 				-- These are the defaults
 
