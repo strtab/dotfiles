@@ -1,0 +1,14 @@
+#set highlight-active-color "#CECDC3"
+set highlight-transparency 1
+set guioptions "none"
+
+#set default-bg "#17171A"
+#set default-fg "#CECDC3"
+#set recolor-lightcolor rgba(0,0,0,0)
+set recolor                     "true"
+
+set synctex-editor-command "nvim"
+set selection-clipboard clipboard
+
+set font "IBM Plex Mono 20"
+
