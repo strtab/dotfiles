@@ -2,6 +2,8 @@ EDITOR=nvim
 TERMINAL=alacritty
 
 export GOPATH="$HOME/.go"
+export OBSIDIAN_PATH="/home/user/Dev/Obsidian/DevOps/"
+
 PATH="$PATH:$HOME/go/bin:$HOME/.go/bin"
 PATH="$HOME/.local/bin:$PATH"
 

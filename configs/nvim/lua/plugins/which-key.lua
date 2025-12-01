@@ -40,6 +40,9 @@ return {
 			e = {
 				name = "Files",
 			},
+			o = {
+				name = "Obsidian",
+			},
 		}, { prefix = "<leader>" })
 	end,
 }

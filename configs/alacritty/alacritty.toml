@@ -1,7 +1,6 @@
 [general]
-import = [
-  "~/.config/alacritty/rose-pine-moon.toml"
-]
+import = ["~/.config/alacritty/colorthemes/material_colors.toml"]
+
 live_config_reload = true
 
 [window]

@@ -1,7 +1,9 @@
 return {
 	"stevearc/oil.nvim",
 	config = function()
-		require("oil").setup({
+		local oil = require("oil")
+		local border_square = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+		oil.setup({
 			default_file_explorer = true,
 			columns = {
 				-- "icon",
@@ -42,7 +44,7 @@ return {
 				padding = 2,
 				max_width = 55,
 				max_height = 15,
-				-- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+				-- border = border_square,
 				win_options = {
 					winblend = 0,
 				},
@@ -57,23 +59,26 @@ return {
 				min_width = { 40, 0.4 },
 				max_height = 0.5,
 				min_height = { 5, 0.1 },
-				-- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+				-- border = border_square,
 				win_options = {
 					winblend = 0,
 				},
 			},
 			progress = {
-				-- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+				-- border = border_square,
 			},
 			ssh = {
-				-- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+				-- border = border_square,
 			},
 			keymaps_help = {
-				-- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+				-- border = border_square,
 			},
 		})
-		vim.keymap.set("n", "<leader>e", function()
-			require("oil").toggle_float()
-		end)
+		local keymap = require("vim.keymap")
+		keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Diagnostics" })
+		keymap.set("n", "<leader>e", function()
+			oil.toggle_float()
+		end, { desc = "Files floating" })
+		keymap.set("n", "<leader>E", "<cmd>Oil<CR>", { desc = "Files" })
 	end,
 }

@@ -10,9 +10,9 @@ external_editor = "nvim" # if set, press ctrl+e (or v in vi normal mode) to edit
 #callback = "" # if set, will run after module execution; for example, calling swaymsg to adjust window size
 cheatsheet_entry = "?"
 cheatsheet_viewer = """
-hyprctl dispatch resizeactive exact 490 390 &>/dev/null
+hyprctl dispatch resizeactive exact 510 400 &>/dev/null
 hyprctl dispatch centerwindow &>/dev/null
-bat --paging always --style snip &>/dev/null
+bat --paging always --style snip 2>/dev/null
 hyprctl dispatch resizeactive exact 490 300 &>/dev/null
 hyprctl dispatch centerwindow &>/dev/null
 clear
@@ -50,6 +50,14 @@ url_encode = true # should be true when calling webpages; this ensures special c
 unbind_proc = true # run cmd in a forked shell as opposed to as a child process; useful for launching gui programs; taken as false if not explicitly set
 
 [[modules]]
+description = "search with kemono"
+prefix = "ke"
+cmd = "xdg-open https://kemono.cr/artists?q='{}'&service=&sort_by=favorited&order=" # try wm's exec command for unbinding if 'setsid -f' does not work as expected, eg. 'hyprctl dispatch exec'
+with_argument = true # if true, {} in cmd will be replaced with user input. if not explicitly set, taken as false.
+url_encode = true # should be true when calling webpages; this ensures special characters in url being readable to browsers; taken as false if not explicitly set
+unbind_proc = true # run cmd in a forked shell as opposed to as a child process; useful for launching gui programs; taken as false if not explicitly set
+
+[[modules]]
 description = "sheet sheet"
 with_argument = true
 prefix = "ch"
@@ -67,6 +75,16 @@ hyprctl dispatch resizeactive exact 1200 800 &>/dev/null
 hyprctl dispatch centerwindow &>/dev/null
 $HOME/.config/otter-launcher/pkgsearch 2>/dev/null
 """ 
+
+[[modules]]
+description = "open obsidian"
+prefix = "no"
+cmd = """
+hyprctl dispatch resizeactive exact 1200 800 &>/dev/null
+hyprctl dispatch centerwindow &>/dev/null
+hyprctl dispatch pin &>/dev/null
+nvim $OBSIDIAN_PATH
+"""
 
 [[modules]]
 description = "translate"
@@ -92,7 +110,7 @@ prefix = "app"
 cmd = """
 hyprctl dispatch resizeactive exact 580 420 &>/dev/null
 hyprctl dispatch centerwindow &>/dev/null
-hyprctl dispatch pin &>/dev/null
+# hyprctl dispatch pin &>/dev/null
 desktop_file() {
 find /usr/share/applications -name "*.desktop" 2>/dev/null
 find /usr/local/share/applications -name "*.desktop" 2>/dev/null
