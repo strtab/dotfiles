@@ -52,6 +52,7 @@ bindkey -M vicmd '^E' end-of-line
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=cyan'
 # ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=black'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
 

@@ -13,17 +13,9 @@ return {
 				inc_rename = false,
 				lsp_doc_border = true,
 			},
-			views = {
-				mini = {
-					border = {
-						padding = { 0, 0 },
-					},
-					filter_options = {},
-				},
-			},
 			cmdline = {
 				enabled = true,
-				view = "cmdline_popup", -- split, vsplit, mini, cmdline, cmdline_popup, confirm, hover
+				view = "cmdline", -- mini, cmdline, cmdline_popup, confirm, hover
 				format = {
 					cmdline = { icon = ":", title = "" },
 					search_down = { icon = " /" },
@@ -44,14 +36,6 @@ return {
 				view_warn = "notify",
 				view_history = "notify",
 				view_search = "virtualtext",
-			},
-			commands = {
-				history = {
-					view = "popup",
-				},
-				all = {
-					view = "popup",
-				},
 			},
 			lsp = {
 				documentation = {

@@ -57,7 +57,7 @@ local function apply_highlights(colors)
 	vim.g.terminal_color_15 = c[15] or "#c0c0c0"
 
 	-- Set background and foreground
-	local bg = c.bg or "#000000"
+	local bg = "#00000000"
 	local fg = c.fg or "#ffffff"
 
 	-- Apply basic highlighting groups
@@ -88,8 +88,11 @@ local function apply_highlights(colors)
 	vim.cmd(string.format("highlight StatusLine guibg=%s guifg=%s", c[4] or "#0000ff", fg))
 	vim.cmd(string.format("highlight StatusLineNC guibg=%s guifg=%s", c[8] or "#808080", fg))
 	vim.cmd(string.format("highlight VertSplit guibg=%s guifg=%s", bg, c[8] or "#808080"))
+
+	-- Tab Line
 	vim.cmd(string.format("highlight TabLineFill guibg=%s guifg=%s", bg, fg))
-	vim.cmd(string.format("highlight TabLine guibg=%s guifg=%s", c[8] or "#808080", fg))
+	vim.cmd(string.format("highlight TabLine guibg=%s guifg=%s", bg, fg))
+	vim.cmd(string.format("highlight TabLineSel guibg=%s guifg=%s", bg, fg))
 
 	-- Oil plugin
 	vim.cmd(string.format("highlight OilDir guibg=%s guifg=%s", bg, c[6] or "#00ffff"))
@@ -102,7 +105,6 @@ local function apply_highlights(colors)
 	vim.cmd(string.format("highlight WhichKeyDesc guibg=%s guifg=%s", bg, fg))
 	vim.cmd(string.format("highlight WhichKeyValue guibg=%s guifg=%s", bg, c[2] or "#00ff00"))
 	vim.cmd(string.format("highlight WhichKeySeparator guibg=%s guifg=%s", bg, c[8] or "#808080"))
-	vim.cmd(string.format("highlight TabLineSel guibg=%s guifg=%s gui=bold", c[4] or "#0000ff", fg))
 end
 
 -- Watch for palette file changes and reload theme using libuv

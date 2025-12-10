@@ -2,49 +2,34 @@ return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
 		local colors = {
-			none = "#00000000",
-			dark = "101010",
-			white = "#f2e9e1",
-			gray = "#525252",
-			cyan = "#56949f",
-			pink = "#d7827e",
-			purple = "#907aa9",
-			red = "#b4637a",
+			bg = "#00000000",
+			fg = 7,
+			gray = 7,
 		}
 
 		local custom_theme = {
 			normal = {
-				a = { fg = colors.white, bg = colors.none },
+				a = { fg = colors.fg, bg = colors.bg },
 				-- a = { fg = colors.dark, bg = colors.cyan, gui = "bold" },
-				b = { fg = colors.gray, bg = colors.none },
-				c = { fg = colors.gray, bg = colors.none },
-				x = { fg = colors.white, bg = colors.none },
-				y = { fg = colors.gray, bg = colors.none },
-				z = { fg = colors.white, bg = colors.none },
+				b = { fg = colors.gray, bg = colors.bg },
+				c = { fg = colors.gray, bg = colors.bg },
+				x = { fg = colors.fg, bg = colors.bg },
+				y = { fg = colors.gray, bg = colors.bg },
+				z = { fg = colors.fg, bg = colors.bg },
 			},
 			insert = {
-				a = { fg = colors.white, bg = colors.none },
 				-- a = { fg = colors.dark, bg = colors.pink, gui = "bold" },
-				z = { fg = colors.white, bg = colors.none },
 			},
 			visual = {
-				a = { fg = colors.white, bg = colors.none },
 				-- a = { fg = colors.dark, bg = colors.purple, gui = "bold" },
-				z = { fg = colors.white, bg = colors.none },
 			},
 			replace = {
-				a = { fg = colors.white, bg = colors.none },
 				-- a = { fg = colors.dark, bg = colors.red, gui = "bold" },
-				z = { fg = colors.white, bg = colors.none },
 			},
 			command = {
-				a = { fg = colors.white, bg = colors.none },
 				-- a = { fg = colors.dark, bg = colors.gray, gui = "bold" },
-				z = { fg = colors.white, bg = colors.none },
 			},
-			inactive = {
-				z = { fg = colors.white, bg = colors.none },
-			},
+			inactive = {},
 		}
 
 		local mode_map = {
