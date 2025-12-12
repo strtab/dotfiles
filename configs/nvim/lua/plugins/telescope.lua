@@ -27,11 +27,10 @@ return {
 		local builtin = require("telescope.builtin")
 		local keymap = require("vim.keymap")
 		keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Files" })
-		keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "String" })
-		keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Strings" })
+		-- keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 		keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Diagnostics" })
-		keymap.set("n", "<leader>fn", "<cmd>:Telescope notify<CR>", { desc = "Notify" })
-		keymap.set("n", "<leader>fc", "<cmd>:Telescope git_commits<CR>", { desc = "Commits" })
+		-- keymap.set("n", "<leader>fc", "<cmd>:Telescope git_commits<CR>", { desc = "Commits" })
 		keymap.set("n", "<leader>fk", "<cmd>:Telescope keymaps<CR>", { desc = "Keymaps" })
 	end,
 }

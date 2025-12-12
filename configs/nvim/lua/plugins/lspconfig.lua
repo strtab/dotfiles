@@ -20,7 +20,7 @@ return {
 				local opts = { buffer = ev.buf, silent = true }
 
 				-- set keybinds
-				opts.desc = "Diagnostic picker"
+				opts.desc = "Diagnostic"
 				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
 				opts.desc = "Show documentation for what is under cursor"
@@ -38,6 +38,8 @@ return {
 			severity_sort = true,
 			signs = {
 				text = {
+					-- [vim.diagnostic.severity.ERROR] = "⧚",
+					-- [vim.diagnostic.severity.WARN] = "⧘",
 					[vim.diagnostic.severity.ERROR] = "",
 					[vim.diagnostic.severity.WARN] = "",
 					[vim.diagnostic.severity.HINT] = "",

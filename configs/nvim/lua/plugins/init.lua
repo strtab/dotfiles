@@ -1,9 +1,10 @@
 return {
-	"nvim-lua/plenary.nvim", -- lua functions, important
+	"nvim-lua/plenary.nvim", -- Lua functions, important
 
 	--"christoomey/vim-tmux-navigator", -- ctrl+h,j,k,l
-	"xiyaowong/transparent.nvim", -- transparancy
+	"xiyaowong/transparent.nvim", -- Transparancy
 
+	-- Icons
 	-- "nvim-tree/nvim-web-devicons",
 	-- "DaikyXendo/nvim-material-icon",
 }

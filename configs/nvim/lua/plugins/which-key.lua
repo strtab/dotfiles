@@ -1,5 +1,6 @@
 return {
 	"folke/which-key.nvim",
+	event = "VeryLazy",
 	config = function()
 		local wk = require("which-key")
 		wk.setup({
@@ -39,9 +40,6 @@ return {
 			},
 			e = {
 				name = "Files",
-			},
-			o = {
-				name = "Obsidian",
 			},
 		}, { prefix = "<leader>" })
 	end,

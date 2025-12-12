@@ -44,6 +44,6 @@ return {
 			},
 		})
 		-- set keymaps
-		vim.keymap.set("n", "<leader>N", "<cmd>Noice dismiss<CR>", { desc = "Dismiss messages" })
+		-- vim.keymap.set("n", "<leader>N", "<cmd>Noice dismiss<CR>", { desc = "Dismiss messages" })
 	end,
 }
