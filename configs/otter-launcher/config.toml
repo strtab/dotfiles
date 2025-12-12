@@ -13,7 +13,7 @@ cheatsheet_viewer = """
 hyprctl dispatch resizeactive exact 510 400 &>/dev/null
 hyprctl dispatch centerwindow &>/dev/null
 bat --paging always --style snip 2>/dev/null
-hyprctl dispatch resizeactive exact 490 300 &>/dev/null
+hyprctl dispatch resizeactive exact 420 260 &>/dev/null
 hyprctl dispatch centerwindow &>/dev/null
 clear
 """ 

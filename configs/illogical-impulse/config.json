@@ -90,7 +90,7 @@
         "quote": "See you space, cowboy",
         "showQuote": true,
         "thumbnailPath": "",
-        "wallpaperPath": "/home/user/Pictures/Wallpapers/Gruvbox/grey_lain_wallpaper.jpg"
+        "wallpaperPath": "/home/user/Pictures/Wallpapers/wallhaven-5ygq75.jpg"
     },
     "bar": {
         "autoHide": {
@@ -103,8 +103,8 @@
             }
         },
         "borderless": false,
-        "bottom": true,
-        "cornerStyle": 0,
+        "bottom": false,
+        "cornerStyle": 1,
         "indicators": {
             "notifications": {
                 "showUnreadCount": true
@@ -149,7 +149,7 @@
         },
         "workspaces": {
             "alwaysShowNumbers": false,
-            "monochromeIcons": false,
+            "monochromeIcons": true,
             "numberMap": [
                 "1",
                 "2",
@@ -178,9 +178,6 @@
     "conflictKiller": {
         "autoKillNotificationDaemons": false,
         "autoKillTrays": false
-    },
-    "crosshair": {
-        "code": "0;P;d;1;0l;10;0o;2;1b;0"
     },
     "dock": {
         "enable": false,
@@ -222,7 +219,7 @@
         },
         "night": {
             "automatic": false,
-            "colorTemperature": 4447,
+            "colorTemperature": 4589,
             "from": "19:00",
             "to": "06:30"
         }

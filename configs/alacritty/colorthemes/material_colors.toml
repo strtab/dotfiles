@@ -2,49 +2,49 @@
 [colors]
 
 [colors.primary]
-background = "#1c1a18"
-foreground = "#a89984"
+background = "#1b1b17"
+foreground = "#a09b85"
 
 [colors.normal]
-black = "#1c1a18"
-red = "#9b5a00"
-green = "#b68d00"
-yellow = "#d69a20"
+black = "#1b1b17"
+red = "#8f6000"
+green = "#94981e"
+yellow = "#b6a627"
 blue = "#5b855f"
 magenta = "#b6663e"
-cyan = "#a1913e"
-white = "#a89984"
+cyan = "#859850"
+white = "#a09b85"
 
 [colors.bright]
-black = "#918473"
-red = "#c97700"
-green = "#dfae00"
-yellow = "#febb30"
-blue = "#99a27c"
+black = "#8b8574"
+red = "#b97f00"
+green = "#b6bc29"
+yellow = "#d8c93b"
+blue = "#94a380"
 magenta = "#d38c5c"
-cyan = "#c8b251"
-white = "#ebe0d5"
+cyan = "#a9bb65"
+white = "#e4e3d7"
 
 [colors.cursor]
-text = "#1c1a18"
-cursor = "#a89984"
+text = "#1b1b17"
+cursor = "#a09b85"
 
 [colors.selection]
-text = "#1c1a18"
-background = "#a89984"
+text = "#1b1b17"
+background = "#a09b85"
 
 [colors.search]
-matches = { foreground = "#1c1a18", background = "#d69a20" }
-focused_match = { foreground = "#1c1a18", background = "#febb30" }
+matches = { foreground = "#1b1b17", background = "#b6a627" }
+focused_match = { foreground = "#1b1b17", background = "#d8c93b" }
 
 [colors.hints]
-start = { foreground = "#1c1a18", background = "#d69a20" }
-end = { foreground = "#1c1a18", background = "#febb30" }
+start = { foreground = "#1b1b17", background = "#b6a627" }
+end = { foreground = "#1b1b17", background = "#d8c93b" }
 
 [colors.line_indicator]
 foreground = "None"
 background = "None"
 
 [colors.footer_bar]
-background = "#1c1a18"
-foreground = "#a89984"
+background = "#1b1b17"
+foreground = "#a09b85"

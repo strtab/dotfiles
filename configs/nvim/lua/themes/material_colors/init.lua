@@ -171,9 +171,9 @@ function M.setup()
 	apply_highlights(palette)
 
 	-- Enable watcher by default, unless explicitly disabled
-	if watch ~= false then
-		setup_watcher()
-	end
+	-- if watch ~= false then
+	-- 	setup_watcher()
+	-- end
 end
 
 return M
