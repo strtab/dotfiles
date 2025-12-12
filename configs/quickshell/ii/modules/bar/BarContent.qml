@@ -62,10 +62,6 @@ Item { // Bar content region
         onScrollDown: root.brightnessMonitor.setBrightness(root.brightnessMonitor.brightness - 0.01)
         onScrollUp: root.brightnessMonitor.setBrightness(root.brightnessMonitor.brightness + 0.01)
         onMovedAway: GlobalStates.osdBrightnessOpen = false
-        onPressed: event => {
-            if (event.button === Qt.LeftButton)
-                GlobalStates.sidebarLeftOpen = !GlobalStates.sidebarLeftOpen;
-        }
 
         // Visual content
         ScrollHint {
