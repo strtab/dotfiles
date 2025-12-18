@@ -75,10 +75,9 @@ return {
 			},
 		})
 		local keymap = require("vim.keymap")
-		keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Diagnostics" })
-		keymap.set("n", "<leader>e", function()
-			oil.toggle_float()
-		end, { desc = "Files floating" })
-		keymap.set("n", "<leader>E", "<cmd>Oil<CR>", { desc = "Files" })
+		-- keymap.set("n", "<leader>e", function()
+		-- 	oil.toggle_float()
+		-- end, { desc = "Files floating" })
+		keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Files" })
 	end,
 }

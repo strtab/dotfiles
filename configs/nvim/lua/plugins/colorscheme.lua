@@ -1,5 +1,4 @@
 return {
-	-- "material_colors",
 	dir = "~/.config/nvim/lua/themes/material_colors",
 	name = "material_colors",
 	lazy = false,
