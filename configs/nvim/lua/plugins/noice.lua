@@ -1,9 +1,8 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
-	dependencies = {
-		"MunifTanjim/nui.nvim",
-	},
+	dependencies = { "MunifTanjim/nui.nvim" },
+
 	config = function()
 		require("noice").setup({
 			presets = {
@@ -20,9 +19,9 @@ return {
 					cmdline = { icon = ":", title = "" },
 					search_down = { icon = " /" },
 					search_up = { icon = " ?" },
-					filter = { icon = "$" },
-					lua = { icon = "lua", title = "" },
-					help = { icon = "help", title = "" },
+					-- 	filter = { icon = "$" },
+					-- 	lua = { icon = "lua", title = "" },
+					-- 	help = { icon = "h", title = "" },
 				},
 			},
 			popupmenu = {
@@ -43,7 +42,7 @@ return {
 				},
 			},
 		})
-		-- set keymaps
+		-- Set keymaps
 		-- vim.keymap.set("n", "<leader>N", "<cmd>Noice dismiss<CR>", { desc = "Dismiss messages" })
 	end,
 }

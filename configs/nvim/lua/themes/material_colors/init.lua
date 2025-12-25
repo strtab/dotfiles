@@ -3,14 +3,26 @@ local M = {}
 -- Function to read and parse the quickshell palette
 local function load_palette()
 	local palette_path = os.getenv("HOME") .. "/.local/state/quickshell/user/generated/terminal/sequences.txt"
+	local save_palette_path = os.getenv("HOME") .. "/.config/nvim/lua/themes/material_colors/last_sequences.txt"
+
 	local file = io.open(palette_path, "r")
 
 	if not file then
-		error("Could not open palette file: " .. palette_path)
+		-- error("Could not open palette file: " .. palette_path)
+		file = io.open(save_palette_path, "r")
+		if not file then
+			error("Could not open palette file: " .. palette_path)
+		end
 	end
 
 	local content = file:read("*a")
 	file:close()
+
+	file = io.open(save_palette_path, "w")
+	if file then
+		file:write(content)
+		file:close()
+	end
 
 	-- Parse the palette file
 	local colors = {}

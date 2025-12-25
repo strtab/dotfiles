@@ -1,4 +1,3 @@
-local vim = vim
 local opt = vim.opt
 
 vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#5f5f5f" })
@@ -12,17 +11,17 @@ opt.relativenumber = true
 opt.number = true
 
 -- Tabs & Indentation
-opt.showtabline = 2
 opt.tabstop = 2
 opt.shiftwidth = 2
+opt.showtabline = 2
 opt.expandtab = true
 opt.autoindent = true
 
 opt.wrap = false
 
 -- Search
--- opt.ignorecase = true
 opt.smartcase = true
+-- opt.ignorecase = true
 
 -- Cursor
 opt.cursorline = true

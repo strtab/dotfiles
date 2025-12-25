@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+-- keymap.del({ "n", "o", "x" }, "f")
+
 -- keymap.set("i", "jk", "<Esc>", { desc = "Exit from insert mode" })
 keymap.set("n", "<leader>n", ":nohl<CR>", { silent = true, desc = "Clear search" })
 
