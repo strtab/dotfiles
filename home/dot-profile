@@ -2,10 +2,11 @@ EDITOR=nvim
 TERMINAL=alacritty
 
 export GOPATH="$HOME/.go"
-export OBSIDIAN_PATH="/home/user/Dev/Obsidian/DevOps/"
+export OBSIDIAN_PATH="$HOME/Dev/Obsidian/DevOps/"
 
-PATH="$PATH:$HOME/go/bin:$HOME/.go/bin"
-PATH="$HOME/.local/bin:$PATH"
+PATH="$PATH:$HOME/.nix-profile/bin"       # Nix
+PATH="$PATH:$HOME/go/bin:$HOME/.go/bin"   # Golang
+PATH="$HOME/.local/bin:$PATH"             # Local Binaries
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

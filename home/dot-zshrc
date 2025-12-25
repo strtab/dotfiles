@@ -7,9 +7,17 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases.zsh
+source $HOME/.ferium.zsh
 
-####################################################
-# Vi mode
+#### highlighting 
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=cyan'
+# ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=black'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
+
+#### Vi mode
 
 set -o vi
 
@@ -44,17 +52,7 @@ bindkey -M viins '^P' up-line-or-history
 bindkey -M vicmd '^A' beginning-of-line
 bindkey -M vicmd '^E' end-of-line
 
-####################################################
-
-# Prompt
-
-# highlighting 
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[comment]='fg=cyan'
-# ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=black'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
+#### Prompt
 
 # Color shortcuts
 R=$fg_no_bold[red]
@@ -67,11 +65,18 @@ local return_side="%(?..%{$R%}   %{$RESET%})"
 PROMPT='%{$M%}%B%1~%b%{$RESET%} %{$M%}%{$RESET%}'
 RPS1="${return_side}"
 
-####################################################
-
-# needed for history file
+#### needed for history file
 [ ! -d ~/.cache/zsh ] && mkdir -p ~/.cache/zsh
 [ ! -f ~/.cache/zsh/history ] && touch ~/.cache/zsh/history
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+#### Tmux autostart
+tmux-start() {
+  if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+    tmux attach-session -t master 2>/dev/null || \
+      tmux new-session -s master
+  fi
+}
+tmux-start
